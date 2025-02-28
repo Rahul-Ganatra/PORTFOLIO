@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rahul Ganatra Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Add this to your existing styles */
+        @media (max-width: 576px) {
+            body {
+                overflow-x: hidden;
+                /* Prevent horizontal scrolling */
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background-color: #000;
+            line-height: 1.6;
+            overflow-y: auto;
+        }
+
+        /* Title Bar Styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            overflow-x: auto;
+        }
+
+        .navbar .name {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            color: #ff0000;
+        }
+
+        .glass-morphism {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.01);
+            /* Made it more transparent */
+            border-radius: 0;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: none;
+            z-index: 0;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            padding-top: 60px;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .typed-text {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: magenta;
+        }
+
+        .btn {
+            padding: 12px 40px;
+            font-size: 1rem;
+            background-color: blue;
+            border: 2px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            /* Ensure button stays on top of other content */
+        }
+
+
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-dots.png') repeat;
+            opacity: 0.2;
+        }
+
+        /* Colors for specific words */
+        .rahul {
+            color: yellowgreen;
+        }
+
+        .scientist {
+            color: yellow;
+        }
+
+        .developer {
+            color: orange;
+        }
+
+        .site {
+            color: khaki;
+        }
+
+        /* About Me Section Styling */
+        .about-me {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-left: 100px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #ff0000;
+        }
+
+        .about-heading {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        @media (max-width: 576px) {
+            .about-heading {
+                color: #333;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 50px;
+                margin-left: 20px;
+
+            }
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 100px;
+        }
+
+        .text {
+            max-width: 600px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: white;
+            text-align: justify;
+        }
+
+        .image-container {
+            width: 350px;
+            height: 350px;
+            margin-left: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            border: 4px solid #ff0000;
+            transform: scale(1.05);
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 576px) {
+            .about-content {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .image-container {
+                order: 1;
+                margin: 30px 0 0 0;
+                width: 300px;
+                height: 300px;
+            }
+
+            .text {
+                order: 2;
+            }
+
+            .section-title,
+            .about-heading {
+                margin-left: 20px;
+            }
+        }
+
+        /* Skills Section Styling */
+        .skills {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .technical-skills {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            padding: 0 100px;
+        }
+
+        .skill-card {
+            background: #111;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            text-transform: capitalize;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff0000;
+        }
+
+        .project-description {
+            color: #888;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .tech-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Experience Section Styling */
+        .experience {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .recent-experience {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 100px;
+        }
+
+        .experience-card {
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            padding: 20px;
+        }
+
+        .experience-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-duration {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-description {
+            color: #fff;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 576px) {
+            .experience-grid {
+                padding: 0 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .section-title,
+            .recent-experience {
+                margin-left: 0;
+            }
+
+            .experience-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Social/Contact Section Styling */
+        .social {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: auto;
+            margin-top: -20px;
+        }
+
+        .section-title {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-left: 100px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #ff0000;
+        }
+
+        .connect-heading {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .social-card {
+            background: #111;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            background: #1a1a1a;
+            border-color: #ff0000;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .social-card i {
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .social-card:hover .fa-github {
+            color: #fff;
+        }
+
+        .social-card:hover .fa-google {
+            color: #DB4437;
+        }
+
+        .social-card:hover .fa-instagram {
+            color: #E1306C;
+        }
+
+        .social-card:hover .fa-linkedin {
+            color: #0077B5;
+        }
+
+        .social-card:hover .fa-dev {
+            color: #fff;
+        }
+
+        .social-card:hover .fa-twitter {
+            color: #1DA1F2;
+        }
+
+        .social-card:hover .fa-medium {
+            color: #00AB6C;
+        }
+
+        .social-card:hover .fa-whatsapp {
+            color: #25D366;
+        }
+
+        .social-card span {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+
+
+        @media (max-width: 576px) {
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add this to your existing navbar styles */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Animation for sections */
+        .about-me,
+        .skills,
+        .projects,
+        .experience,
+        .social {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Active link style */
+        .navbar a.active {
+            color: #ff0000;
+        }
+
+        /* General Responsive Styles */
+        @media (max-width: 576px) {
+
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 50px;
+            }
+
+            .section-title,
+            .technical-skills,
+            .recent-projects,
+            .recent-experience,
+            .connect-heading {
+                margin-left: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+
+            /* Navigation */
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                margin: 0 10px;
+            }
+
+            /* Header */
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            .typed-text {
+                font-size: 1.6rem;
+            }
+
+            /* About Section */
+            .about-content {
+                flex-direction: column;
+                padding: 0 30px;
+                text-align: center;
+            }
+
+            .text {
+                margin-bottom: 30px;
+            }
+
+            .image-container {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Grid Layouts */
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+                gap: 15px;
+            }
+
+            /* Section Titles */
+            .section-title,
+            .technical-skills,
+            .recent-projects,
+            .recent-experience,
+            .connect-heading {
+                margin-left: 20px;
+                font-size: 2.5rem;
+            }
+
+            /* Navigation */
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .navbar .name {
+                margin-bottom: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 10px;
+            }
+
+            /* About Section */
+            .about-content {
+                padding: 0 20px;
+            }
+
+            .text {
+                font-size: 1rem;
+            }
+
+            .image-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            /* Experience Cards */
+            .experience-card {
+                margin-bottom: 15px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            /* Header */
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .typed-text {
+                font-size: 1.2rem;
+            }
+
+            /* Grid Layouts */
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Cards */
+            .skill-card,
+            .project-card,
+            .experience-card,
+            .social-card {
+                width: 100%;
+            }
+
+            /* Section Titles */
+            .technical-skills,
+            .recent-projects,
+            .recent-experience,
+            .connect-heading {
+                font-size: 2rem;
+
+            }
+
+            /* Navigation */
+            .navbar {
+                padding: 10px 5px;
+            }
+
+            .navbar a {
+                font-size: 0.9rem;
+                margin: 3px 5px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+        }
+
+        /* Fix for very small devices */
+        @media (max-width: 320px) {
+            .navbar .name {
+                font-size: 1.2rem;
+            }
+
+            .navbar a {
+                font-size: 0.8rem;
+                margin: 2px 4px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .typed-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* Height-based media queries for better vertical spacing */
+        @media (max-height: 700px) {
+            header {
+                padding-top: 80px;
+            }
+
+            .section {
+                padding: 60px 40px;
+            }
+        }
+
+        /* Base styles for all devices */
+        :root {
+            --header-height: 70px;
+        }
+
+        /* General responsive container */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Responsive Typography */
+        html {
+            font-size: 16px;
+        }
+
+        /* Large Devices (Desktops) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        /* Medium Devices (Tablets, iPads) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .container {
+                max-width: 960px;
+            }
+
+            /* Navigation */
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            /* Sections */
+            .section-title {
+                font-size: 2.5rem;
+                margin-left: 50px;
+            }
+
+            /* Grids */
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 0 30px;
+            }
+
+            /* About Section */
+            .about-content {
+                padding: 0 40px;
+            }
+
+            .image-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* Small Devices (Mobile Landscape) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .container {
+                max-width: 540px;
+            }
+
+            /* Navigation */
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .navbar .name {
+                margin-bottom: 10px;
+            }
+
+            /* Header */
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .typed-text {
+                font-size: 1.4rem;
+            }
+
+            /* Grids */
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 0 20px;
+            }
+        }
+
+        /* Extra Small Devices (Mobile Portrait) */
+        @media (max-width: 575px) {
+
+            /* Navigation */
+            .navbar {
+                flex-direction: column;
+                padding: 10px 5px;
+            }
+
+            .navbar .name {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .navbar a {
+                font-size: 0.9rem;
+                margin: 3px 5px;
+            }
+
+            /* Header */
+            header {
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .typed-text {
+                font-size: 1.2rem;
+            }
+
+            /* Sections */
+            .section-title,
+            .technical-skills,
+            .recent-projects,
+            .recent-experience,
+            .connect-heading {
+                font-size: 2rem;
+                margin-left: 2s0px;
+            }
+
+            /* Grids */
+            .skills-container,
+            .projects-grid,
+            .experience-grid,
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 0 15px;
+            }
+
+            /* Project Section Adjustments */
+            .projects-grid {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .project-card {
+                margin: 10px 0;
+            }
+
+            /* About Section */
+            .about-content {
+                flex-direction: column;
+                padding: 0 15px;
+                text-align: center;
+            }
+
+            .image-container {
+                width: 250px;
+                height: 250px;
+                margin: 20px auto;
+            }
+
+            /* Cards */
+            .skill-card,
+            .project-card,
+            .experience-card,
+            .social-card {
+                width: 100%;
+            }
+
+            /* Aligning recent project text with other sections */
+            .recent-projects {
+                text-align: start;
+                margin-left: 20px;
+            }
+        }
+
+        /* iPad Specific */
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+            .container {
+                max-width: 720px;
+            }
+
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .image-container {
+                margin-left: 30px;
+            }
+        }
+
+        /* iPhone X and newer */
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            .navbar {
+                padding-top: env(safe-area-inset-top);
+            }
+
+            .footer {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 576px) and (orientation: landscape) {
+            .navbar {
+                padding: 5px 15px;
+                text-align: center;
+            }
+
+            header {
+                padding-top: 60px;
+                padding-bottom: 30px;
+                text-align: center;
+            }
+
+            .section {
+                padding: 40px 20px;
+                text-align: center;
+            }
+        }
+
+        /* High-DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+
+            /* Optimize images for high-DPI displays */
+            img {
+                image-rendering: -webkit-optimize-contrast;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+
+            .social-card,
+            .project-card,
+            .experience-card {
+                transition: none;
+            }
+
+            .navbar a:active {
+                color: #ff0000;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0a0a0a;
+                --text-color: #ffffff;
+            }
+        }
+
+        /* Print Styles */
+
+
+        /* Mobile First Approach */
+        @media only screen and (max-width: 576px) {
+
+            /* Navigation Bar */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 15px 20px;
+                background-color: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                overflow-x: auto;
+                /* Changed from hidden to auto to ensure content is visible */
+            }
+
+            .navbar .name {
+                font-size: 1rem;
+                white-space: nowrap;
+                margin-right: 15px;
+            }
+
+            .navbar div {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin: 0;
+                padding: 0;
+                overflow-x: auto;
+                /* Changed from hidden to auto to ensure content is visible */
+            }
+
+            .navbar a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+                white-space: nowrap;
+                margin: 0;
+            }
+
+            /* Ensure content in nav bar does not go outside the screen */
+            .navbar::-webkit-scrollbar {
+                display: block;
+            }
+
+            .navbar {
+                -ms-overflow-style: auto;
+                scrollbar-width: auto;
+            }
+        }
+
+        /* iPhone Notch Support */
+        @supports (-webkit-touch-callout: none) {
+            @media only screen and (device-width: 375px) and (device-height: 812px),
+            only screen and (device-width: 390px) and (device-height: 844px),
+            only screen and (device-width: 428px) and (device-height: 926px) {
+                .navbar {
+                    padding-top: calc(env(safe-area-inset-top) + 10px);
+                }
+            }
+        }
+
+        /* Landscape Mode */
+        @media only screen and (max-width: 767px) and (orientation: landscape) {
+            .navbar {
+                padding: 8px 15px;
+            }
+        }
+
+        .view-certificate-btn {
+            display: inline-block;
+            background: #ff0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .view-certificate-btn:hover {
+            background: #cc0052;
+        }
+
+        .experience-card {
+            position: relative;
+        }
+
+        .view-certificate-btn {
+            display: inline-block;
+            background: #ff0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .view-certificate-btn:hover {
+            background: #cc0052;
+        }
+
+        .opportunities {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-left: 100px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #ff0000;
+        }
+
+        .opportunities-heading {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+
+
+        .opportunities p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding: 0 100px;
+        }
+
+        .social {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: auto;
+            margin-top: -25px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 100px;
+        }
+
+        .project-card {
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .project-description {
+            color: #ccc;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: left;
+            margin-bottom: 10px;
+        }
+
+        .tech-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .view-live {
+            display: inline-block;
+            background: #ff0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .view-live:hover {
+            background: #cc0052;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 576px) {
+            .project-title {
+                font-size: 1.3rem;
+                /* Smaller title on smaller screens */
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                /* Smaller description on smaller screens */
+            }
+
+            .view-live {
+                padding: 8px 16px;
+                /* Smaller button padding */
+            }
+
+            .project-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* Center the project card */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .project-title {
+                font-size: 1.2rem;
+                /* Even smaller title */
+            }
+
+            .project-description {
+                font-size: 0.8rem;
+                /* Even smaller description */
+            }
+
+            .view-live {
+                padding: 6px 12px;
+                /* Even smaller button padding */
+            }
+
+            .project-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* Center the project card */
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <nav class="navbar">
+
+        <div class="name">
+            <a href="#top">Rahul Jignesh Ganatra</a>
+        </div>
+        <div class="nav-links" id="nav-links">
+
+            <a href="#about-me" class="nav-link">About Me</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Work Experience</a>
+            <a href="#opportunities" class="nav-link">Looking for Freelancing</a>
+            <a href="#contact" class="nav-link">Social</a>
+        </div>
+    </nav>
+
+    <div class="glass-morphism"></div>
+
+    <header>
+        <h1>Rahul.</h1>
+        <div id="typed-text" class="typed-text"></div>
+        <a href="RAHUL JIGNESH GANATRA RESUME.pdf" target="_blank">
+            <button class="btn">View Resume</button>
+        </a>
+    </header>
+
+    <video src="code.mp4" class="background-video" autoplay muted loop></video>
+
+    <div class="dots"></div>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="about-me">
+        <h3 class="section-title">ABOUT</h3>
+        <h2 class="about-heading">ABOUT ME</h2>
+        <div class="about-content">
+            <div class="text">
+                <p>
+                    Hello, I am Rahul, a passionate Flutter developer and data scientist with a strong focus on building
+                    impactful mobile applications. With expertise in Flutter, I create seamless and user-friendly
+                    experiences, while my
+                    background in data science enables me to leverage machine learning and data-driven insights to solve
+                    complex problems.
+                    I am always eager to learn new technologies and continuously strive to improve my skills to deliver
+                    high-quality solutions.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="rahul photo.jpg" alt="Rahul's Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h3 class="section-title">SKILLS</h3>
+        <h2 class="technical-skills">TECHNICAL SKILLS</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="html.png" alt="HTML">
+                <p>HTML</p>
+            </div>
+            <div class="skill-card">
+                <img src="css.png" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill-card">
+                <img src="firebase.png" alt="Firebase">
+                <p>Firebase</p>
+            </div>
+            <div class="skill-card">
+                <img src="react.png" alt="React.js">
+                <p>React.js</p>
+            </div>
+            <div class="skill-card">
+                <img src="git.png" alt="Git">
+                <p>Git</p>
+            </div>
+            <div class="skill-card">
+                <img src="python.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-card">
+                <img src="github.png" alt="Github">
+                <p>Github</p>
+            </div>
+            <div class="skill-card">
+                <img src="flutter.png" alt="Flutter">
+                <p>Flutter</p>
+            </div>
+            <div class="skill-card">
+                <img src="dart.png" alt="Dart">
+                <p>Dart</p>
+            </div>
+            <div class="skill-card">
+                <img src="numpy.png" alt="Numpy">
+                <p>Numpy</p>
+            </div>
+            <div class="skill-card">
+                <img src="pandas.png" alt="Pandas">
+                <p>Pandas</p>
+            </div>
+            <div class="skill-card">
+                <img src="sk.png" alt="Scikit-learn">
+                <p>Scikit-Learn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h3 class="section-title">PROJECTS</h3>
+        <h2 class="recent-projects">RECENT PROJECTS</h2>
+
+        <div class="projects-grid">
+            <!-- Manually added project cards -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="stockify.png" alt="Project 1 Preview">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">STOCKIFY</h3>
+                    <ul class="project-description">
+                        <li>Predicts stock prices using machine learning models.</li>
+                        <li>Tracks real-time market indices like SENSEX and NIFTY.</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Numpy</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                    <a href="https://github.com/Rahul-Ganatra/STOCKIFY" target="_blank" class="view-live">
+                        View Live <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="aml.png" alt="Project 2 Preview">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">ANTI MONEY LAUNDERING (AML)</h3>
+                    <ul class="project-description">
+                        <li>Detects financial fraud using machine learning algorithms effectively.</li>
+                        <li>Analyzes transaction patterns to identify suspicious activities.</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Javascript</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Numpy</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <a href="https://github.com/Rahul-Ganatra/AML" target="_blank" class="view-live">
+                        View Live <i class="fas fa-eye"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="mc.png" alt="Project 3 Preview">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">MOUSE-CONTROLLER</h3>
+                    <ul class="project-description">
+                        <li>A Flutter application enabling remote mouse control through QR code scanning.</li>
+                        <li>Integrates camera functionality, WebSocket communication, and sensor data processing.</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <a href="https://github.com/Rahul-Ganatra/Mouse-Controller" target="_blank" class="view-live">
+                        View Live <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="vidai.png" alt="Project 4 Preview">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">VID-AI:</h3>
+                    <ul class="project-description">
+                        <li>Developed an AI-driven platform for real-time video editing and automation.</li>
+                        <li>Features include emotion detection, scene analysis, and automated subtitle generation tools.
+                        </li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FFMPEG</span>
+                        <span class="tech-tag">Whisper</span>
+                        <span class="tech-tag">OpenCV</span>
+                    </div>
+                    <a href="https://github.com/Rahul-Ganatra/VidAI" target="_blank" class="view-live">
+                        View Live <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <style>
+        .projects {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-left: 100px;
+        }
+
+        .recent-projects {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        @media (max-width: 576px) {
+            .recent-projects {
+                color: #333;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 50px;
+                margin-left: 20px;
+
+            }
+        }
+
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 100px;
+        }
+
+        .project-card {
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .project-description {
+            color: #ccc;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: left;
+            margin-bottom: 10px;
+        }
+
+        .tech-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .view-live {
+            display: inline-block;
+            background: #ff0066;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .view-live:hover {
+            background: #cc0052;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('#typed-text', {
+            strings: [
+                'HELLO, I AM <span class="rahul">RAHUL</span>',
+                'DATA <span class="scientist">SCIENCE</span>',
+                'FLUTTER <span class="developer">DEVELOPER</span>',
+                'WELCOME TO MY <span class="site">SITE</span>'
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true,
+            contentType: 'html'
+        });
+
+        function fetchGitHubProjects() {
+            const projectsContainer = document.getElementById('projects-container'); // Ensure this ID matches your HTML
+
+            if (!projectsContainer) {
+                console.error("Projects container not found!");
+                return; // Exit the function if the element is not found
+            }
+
+            // Fetching projects logic here
+            fetch('https://api.github.com/users/yourusername/repos') // Replace 'yourusername' with your actual GitHub username
+                .then(response => response.json())
+                .then(data => {
+                    projectsContainer.innerHTML = ''; // Clear existing content
+                    data.forEach(project => {
+                        const projectElement = document.createElement('div');
+                        projectElement.innerHTML = `<h3>${project.name}</h3><p>${project.description}</p>`;
+                        projectsContainer.appendChild(projectElement);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching projects:", error);
+                });
+        }
+
+        // Call the function when the page loads    
+        document.addEventListener('DOMContentLoaded', fetchGitHubProjects);
+    </script>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h3 class="section-title">EXPERIENCE</h3>
+        <h2 class="recent-experience">WORK EXPERIENCE</h2>
+
+        <div class="experience-grid">
+            <!-- Experience Card 1 -->
+            <div class="experience-card">
+                <div class="experience-image">
+                    <img src="s4ds black.jpg" alt="Company Logo"
+                        onerror="this.src='https://via.placeholder.com/350x200?text=Company+Logo'">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-title">App Development Intern</h3>
+                    <h4 class="company-name">S4DS,KJSIT Chapter </h4>
+                    <p class="experience-duration">September 2023 - November 2023 </p>
+                    <ul class="experience-description">
+                        <li>Developed and maintained multiple Flutter applications, including Android apps, implementing
+                            complex UI designs and animations.</li>
+                        <li>Integrated REST APIs, managed state using Provider, and worked with Firebase for backend
+                            functionality in Flutter apps.</li>
+                        <li>Collaborated with cross-functional teams on various in-house projects to ensure smooth
+                            integration and project completion.</li>
+                        <li>Contributed to full-stack development by working on both frontend and backend aspects of
+                            applications.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Dart</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Looking for Freelancing and Internship Opportunities Section -->
+    <section id="opportunities" class="opportunities">
+        <h3 class="section-title">LOOKING FOR OPPORTUNITIES</h3>
+        <h2 class="opportunities-heading">FREELANCING & INTERNSHIP</h2>
+        <p class="opportunities-heading-text">
+            I am actively seeking freelancing and internship opportunities in <a href="" style="color: yellow;">FLUTTER
+                APP DEVELOPMENT</a> and
+            <a href="" style="color: yellow;">DATA SCIENCE</a>
+            to further enhance my skills and gain practical experience in these fields.
+            If you have any projects or positions available in these areas, please feel free to reach out to me.
+        </p>
+        <p class="opportunities-heading-text">
+            Contact me at <a href="mailto:rahuljganatra07@gmail.com"
+                style="color: orange; font-size: small;">rahuljganatra07@gmail.com</a> or on
+            social media.
+        </p>
+    </section>
+
+    <!-- Social/Contact Section -->
+    <section id="contact" class="social">
+        <h3 class="section-title">SOCIAL</h3>
+        <h2 class="connect-heading">LET'S CONNECT!</h2>
+
+        <div class="social-grid">
+            <!-- Row 1 -->
+            <a href="https://github.com/Rahul-Ganatra" target="_blank" class="social-card">
+                <i class="fab fa-github"></i>
+                <span>Github</span>
+            </a>
+
+            <a href="mailto:rahuljganatra07@gmail.com" class="social-card">
+                <i class="fab fa-google"></i>
+                <span>Gmail</span>
+            </a>
+
+            <a href="https://www.instagram.com/_rahul_7404" target="_blank" class="social-card">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/rahul-ganatra-b61282295/" target="_blank" class="social-card">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://wa.me/9152251477" target="_blank" class="social-card">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <style>
+        .experience {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-left: 100px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #ff0000;
+        }
+
+        .recent-experience {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        @media (max-width: 576px) {
+            .recent-experience {
+                color: #333;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 50px;
+                margin-left: 20px;
+
+            }
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 100px;
+        }
+
+        .experience-card {
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            padding: 20px;
+        }
+
+        .experience-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            color: #ff0000;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-duration {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-description {
+            color: #fff;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid {
+                padding: 0 20px;
+            }
+
+            .section-title,
+            .recent-experience {
+                margin-left: 20px;
+            }
+
+            .experience-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        .opportunities {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: auto;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        @media (max-width: 576px) {
+            .opportunities {
+                max-width: 600px;
+                font-size: 1.2rem;
+                line-height: 1.8;
+                color: white;
+                text-align: justify;
+                padding: 1px;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+        }
+
+
+        .opportunities-heading {
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-left: 100px;
+        }
+
+        @media (max-width: 576px) {
+            .opportunities-heading {
+                color: #333;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 50px;
+                margin-left: 20px;
+            }
+
+            .opportunities-heading-text {
+                max-width: 550px;
+                font-size: 1.2rem;
+                line-height: 1.8;
+                color: white;
+                text-align: justify;
+
+            }
+        }
+
+        .social {
+            padding: 80px 40px;
+            background-color: #0a0a0a;
+            min-height: auto;
+            margin-top: -20px;
+        }
+    </style>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>RAHUL GANATRA</h3>
+                <p>Flutter Developer & Data Scientist</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i><a
+                            href="mailto:rahuljganatra07@gmail.com">rahuljganatra07@gmail.com</a>
+                    </li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+919152251477">+91 9152251477</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rahul Ganatra. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .footer {
+            background-color: #111;
+            color: #fff;
+            padding: 60px 0 20px;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #ff0000;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 10px;
+            color: #ff0000;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- Add this JavaScript for scroll animations and active nav links -->
+    <script>
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+        // Active nav link handling
+        const sections = document.querySelectorAll('section'); // Ensure this is defined before use
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for Safari and other browsers that don't support scroll-behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
