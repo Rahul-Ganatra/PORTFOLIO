@@ -46,8 +46,6 @@
             left: 0;
             width: 100%;
             z-index: 10;
-            overflow-x: auto;
-            /* Allow horizontal scrolling */
         }
 
         .navbar .name {
@@ -1403,28 +1401,321 @@
             }
         }
 
+        /* Replace the existing nav-links and menu icon styles with these */
         .nav-links {
             display: flex;
             flex-direction: row;
             gap: 30px;
+        }
+
+        /* Responsive Navigation for tablets and mobile */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                text-align: center;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+                margin: 0;
+            }
+
+            .nav-links a:hover {
+                background-color: rgba(255, 0, 0, 0.1);
+            }
+
+            .navbar {
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+        }
+
+        /* Additional styles for mobile screens */
+        @media screen and (max-width: 576px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .navbar .name {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                padding: 15px;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Update these styles in your existing CSS */
+        @media screen and (max-width: 576px) {
+            .navbar {
+                padding: 10px 15px;
+                position: fixed;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                z-index: 9999;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navbar .name {
+                font-size: 1.2rem;
+            }
+
+            .menu-icon {
+                display: none;
+                /* Hide the menu icon */
+            }
+
+            .nav-links {
+                display: none;
+                /* Hide the navigation links */
+            }
+
+            /* Remove all the nav-links related styles for mobile */
+            .nav-links.active,
+            .nav-links a {
+                display: none;
+            }
+        }
+
+        /* Update the projects section styles for mobile view */
+        @media (max-width: 768px) {
+            .projects-grid {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 20px;
+                padding: 20px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                /* Firefox */
+                -ms-overflow-style: none;
+                /* IE and Edge */
+            }
+
+            .projects-grid::-webkit-scrollbar {
+                display: none;
+                /* Chrome, Safari, Opera */
+            }
+
+            .project-card {
+                min-width: 300px;
+                /* Fixed width for each card */
+                width: 300px;
+                margin-right: 0;
+                scroll-snap-align: start;
+                flex-shrink: 0;
+                height: auto;
+                background: rgba(17, 17, 17, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+            }
+
+            .project-image {
+                height: 180px;
+            }
+
+            .project-content {
+                padding: 15px;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .tech-tag {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+
+            .view-live {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-links {
+                display: none !important;
+            }
+
+            .nav-wheel {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 80px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1001;
+                background: rgba(0, 0, 0, 0.0);
+                overflow: visible;
+                pointer-events: auto;
+                margin-top: 10px;
+            }
+
+            .wheel {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                width: 330px;
+                /* 3 x 110px (link width) */
+                height: 60px;
+                border-radius: 40px;
+                background: transparent;
+                box-shadow: none;
+                overflow-x: auto;
+                overflow-y: visible;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-snap-type: x mandatory;
+                gap: 0;
+                position: relative;
+                margin: 0 auto;
+                padding-left: 110px;
+                /* Half of .wheel-link width */
+                padding-right: 110px;
+                /* Half of .wheel-link width */
+                mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            }
+
+            .wheel::-webkit-scrollbar {
+                display: none;
+            }
+
+            .wheel-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 110px;
+                min-width: 110px;
+                max-width: 110px;
+                margin: 0;
+                background: transparent !important;
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 500;
+                text-align: center;
+                text-decoration: none;
+                box-shadow: none;
+                border: none;
+                transition: color 0.2s, transform 0.2s;
+                scroll-snap-align: center;
+                padding: 0;
+                opacity: 0.5;
+                pointer-events: auto;
+                z-index: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .wheel-link.active,
+            .wheel-link:focus {
+                color: #ff0000;
+                font-weight: 700;
+                text-decoration: underline;
+                background: transparent !important;
+                border: none;
+                transform: scale(1.1);
+                opacity: 1;
+                z-index: 2;
+            }
+        }
+
+        @media (min-width: 577px) {
+            .nav-wheel {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar .name {
+                margin-bottom: 18px;
+            }
+
+            .nav-wheel {
+                margin-top: 10px;
+            }
+        }
+
+        .resume-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .resume-buttons .btn {
+            position: static;
+            transform: none;
+            margin: 0;
         }
     </style>
 </head>
 
 <body id="top">
     <nav class="navbar">
-
         <div class="name">
             <a href="#top">Rahul Jignesh Ganatra</a>
         </div>
         <div class="nav-links" id="nav-links">
-
             <a href="#about-me" class="nav-link">About Me</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#experience" class="nav-link">Work Experience</a>
-            <a href="#opportunities" class="nav-link">Looking for Freelancing</a>
+            <a href="#opportunities" class="nav-link">Freelancing</a>
             <a href="#contact" class="nav-link">Social</a>
+        </div>
+        <div class="nav-wheel" id="nav-wheel">
+            <div class="wheel" id="wheel">
+                <!-- Clone 1 -->
+                <a href="#about-me" class="wheel-link">About Me</a>
+                <a href="#skills" class="wheel-link">Skills</a>
+                <a href="#projects" class="wheel-link">Projects</a>
+                <a href="#experience" class="wheel-link">Experience</a>
+                <a href="#opportunities" class="wheel-link">Freelancing</a>
+                <a href="#contact" class="wheel-link">Social</a>
+                <!-- Original -->
+                <a href="#about-me" class="wheel-link">About Me</a>
+                <a href="#skills" class="wheel-link">Skills</a>
+                <a href="#projects" class="wheel-link">Projects</a>
+                <a href="#experience" class="wheel-link">Experience</a>
+                <a href="#opportunities" class="wheel-link">Freelancing</a>
+                <a href="#contact" class="wheel-link">Social</a>
+                <!-- Clone 2 -->
+                <a href="#about-me" class="wheel-link">About Me</a>
+                <a href="#skills" class="wheel-link">Skills</a>
+                <a href="#projects" class="wheel-link">Projects</a>
+                <a href="#experience" class="wheel-link">Experience</a>
+                <a href="#opportunities" class="wheel-link">Freelancing</a>
+                <a href="#contact" class="wheel-link">Social</a>
+            </div>
         </div>
     </nav>
 
@@ -1433,10 +1724,16 @@
     <header>
         <h1>Rahul.</h1>
         <div id="typed-text" class="typed-text"></div>
-        <a href="RAHUL JIGNESH GANATRA RESUME.pdf" target="_blank">
-            <button class="btn">View Resume</button>
-        </a>
+        <div class="resume-buttons">
+            <a href="RAHUL JIGNESH GANATRA AI.pdf" target="_blank">
+                <button class="btn">AI/ML Resume</button>
+            </a>
+            <a href="RAHUL JIGNESH GANATRA RESUME.pdf" target="_blank">
+                <button class="btn">App/Web Resume</button>
+            </a>
+        </div>
     </header>
+
 
     <img src="nnn.gif" class="background-video" alt="Neural Network Animation">
 
@@ -1525,6 +1822,14 @@
                 <img src="sk.png" alt="Scikit-learn">
                 <p>Scikit-Learn</p>
             </div>
+            <div class="skill-card">
+                <img src="tf.png" alt="TensorFlow">
+                <p>TensorFlow</p>
+            </div>
+            <div class="skill-card">
+                <img src="streamlit.png" alt="Streamlit">
+                <p>Streamlit</p>
+            </div>
         </div>
     </section>
 
@@ -1576,7 +1881,7 @@
                     <div class="project-tech">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Javascript</span>
+                        <span class="tech-tag">javascript</span>
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Pandas</span>
                         <span class="tech-tag">Numpy</span>
@@ -1843,7 +2148,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-grow: 1;
         }
 
@@ -2248,6 +2553,7 @@
 
         <div class="footer-bottom">
             <p>&copy; 2024 Rahul Ganatra. All rights reserved.</p>
+            <p>Made with ❤️ by Rahul Ganatra</p>
         </div>
     </footer>
 
@@ -2371,6 +2677,175 @@
                     });
                 }
             });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hide nav-links, show nav-wheel on mobile
+            function toggleNavWheel() {
+                const navLinks = document.getElementById('nav-links');
+                const navWheel = document.getElementById('nav-wheel');
+                if (window.innerWidth <= 576) {
+                    navLinks.style.display = 'none';
+                    navWheel.style.display = 'flex';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navWheel.style.display = 'none';
+                }
+            }
+            toggleNavWheel();
+            window.addEventListener('resize', toggleNavWheel);
+
+            // Wheel navigation logic
+            const wheel = document.getElementById('wheel');
+            const wheelLinks = wheel.querySelectorAll('.wheel-link');
+            const sections = document.querySelectorAll('section');
+
+            // Scroll to section on click
+            wheelLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Highlight active link based on scroll
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                wheelLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                        // Scroll the wheel so the active link is centered
+                        link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wheel = document.getElementById('wheel');
+            const wheelLinks = wheel.querySelectorAll('.wheel-link');
+            const numLinks = 6; // Number of unique links
+            const sections = document.querySelectorAll('section');
+            let lastCenteredIndex = -1;
+            let isAutoScrolling = false;
+
+            // Set initial scroll to the start of the "original" set
+            function setInitialScroll() {
+                // Each link is about 36vw wide (6 links in 320px, margin included)
+                // So scroll to the start of the second set
+                const firstOriginal = wheel.children[numLinks];
+                if (firstOriginal) {
+                    firstOriginal.scrollIntoView({ behavior: 'auto', inline: 'center' });
+                }
+            }
+
+            setInitialScroll();
+
+            // Infinite scroll logic
+            wheel.addEventListener('scroll', function () {
+                const scrollLeft = wheel.scrollLeft;
+                const scrollWidth = wheel.scrollWidth;
+                const clientWidth = wheel.clientWidth;
+                const singleSetWidth = scrollWidth / 3;
+
+                // If scrolled to the left end, jump to the same position in the original set
+                if (scrollLeft < singleSetWidth * 0.2) {
+                    wheel.scrollLeft = scrollLeft + singleSetWidth;
+                }
+                // If scrolled to the right end, jump back to the original set
+                else if (scrollLeft > singleSetWidth * 1.8) {
+                    wheel.scrollLeft = scrollLeft - singleSetWidth;
+                }
+            });
+
+            // Helper: Get the index of the link closest to the center of the wheel (in the original set)
+            function getCenteredLinkIndex() {
+                const wheelRect = wheel.getBoundingClientRect();
+                const wheelCenter = wheelRect.left + wheelRect.width / 2;
+                let minDist = Infinity;
+                let centeredIdx = 0;
+                // Only check the original set
+                for (let i = numLinks; i < numLinks * 2; i++) {
+                    const link = wheel.children[i];
+                    const linkRect = link.getBoundingClientRect();
+                    const linkCenter = linkRect.left + linkRect.width / 2;
+                    const dist = Math.abs(wheelCenter - linkCenter);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        centeredIdx = i;
+                    }
+                }
+                return centeredIdx;
+            }
+
+            // Scroll to the section corresponding to the centered link
+            function scrollToCenteredSection() {
+                if (isAutoScrolling) return;
+                const idx = getCenteredLinkIndex();
+                if (idx !== lastCenteredIndex) {
+                    lastCenteredIndex = idx;
+                    const targetId = wheel.children[idx].getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        isAutoScrolling = true;
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => { isAutoScrolling = false; }, 700);
+                    }
+                    // Highlight only the centered link in the original set
+                    for (let i = 0; i < wheel.children.length; i++) {
+                        wheel.children[i].classList.remove('active');
+                    }
+                    wheel.children[idx].classList.add('active');
+                }
+            }
+
+            // Listen for horizontal scroll on the wheel
+            wheel.addEventListener('scroll', function () {
+                clearTimeout(wheel._snapTimeout);
+                wheel._snapTimeout = setTimeout(() => {
+                    // Find the centered link in the original set
+                    const idx = getCenteredLinkIndex();
+                    const link = wheel.children[idx];
+                    if (link) {
+                        link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                }, 200);
+            });
+
+            // Center the clicked link in the wheel and scroll to section
+            for (let i = 0; i < wheel.children.length; i++) {
+                wheel.children[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Center the clicked link in the wheel
+                    this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    // Scroll to the section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        isAutoScrolling = true;
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => { isAutoScrolling = false; }, 700);
+                    }
+                });
+            }
+
+            // Re-center on resize
+            window.addEventListener('resize', setInitialScroll);
         });
     </script>
 
