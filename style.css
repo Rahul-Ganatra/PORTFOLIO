@@ -326,7 +326,7 @@ header h1 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
     gap: 30px;
     padding: 0 100px;
 }
@@ -860,14 +860,17 @@ html {
 
     /* Projects Section Mobile Fix */
     .projects-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 20px;
+        overflow-x: visible;
+        scroll-snap-type: none;
     }
 
     .project-card {
         width: 100%;
-        margin: 0 auto;
+        margin: 0;
     }
 
     .project-image {
@@ -946,16 +949,52 @@ html {
     }
 }
 
-/* Add a max-width to prevent overflow on larger mobile devices */
+/* Update tablet view */
 @media (min-width: 577px) and (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0 40px;
-    }
-
-    .projects-grid,
-    .experience-grid {
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 40px;
     }
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 100px;
+    }
+}
+
+/* Add these styles */
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.show-more-btn {
+    display: inline-block;
+    background: #ff0066;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.show-more-btn:hover {
+    background: transparent;
+    border-color: #ff0066;
+    color: #ff0066;
+}
+
+.show-more-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.show-more-btn:hover i {
+    transform: translateX(5px);
 }
