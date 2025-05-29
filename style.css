@@ -1,0 +1,961 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add this to your existing styles */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-color: #000;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* Title Bar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar .name {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 20px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ff0000;
+}
+
+.glass-morphism {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    z-index: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.typed-text {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: magenta;
+}
+
+.btn {
+    padding: 12px 40px;
+    font-size: 1rem;
+    background-color: blue;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/black-dots.png') repeat;
+    opacity: 0.2;
+}
+
+/* Colors for specific words */
+.rahul {
+    color: yellowgreen;
+}
+
+.scientist {
+    color: yellow;
+}
+
+.developer {
+    color: orange;
+}
+
+.site {
+    color: khaki;
+}
+
+/* About Me Section Styling */
+.about-me {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.section-title {
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: #ff0000;
+}
+
+.about-heading {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+@media (max-width: 576px) {
+    .about-heading {
+        color: #333;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+        margin-left: 20px;
+    }
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    gap: 50px;
+}
+
+.text {
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+    text-align: justify;
+}
+
+.image-container {
+    width: 350px;
+    height: 350px;
+    margin-left: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    border: 4px solid #ff0000;
+    transform: scale(1.05);
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+    .about-content {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .image-container {
+        order: 1;
+        margin: 0;
+        width: 300px;
+        height: 300px;
+    }
+
+    .text {
+        order: 2;
+    }
+
+    .section-title,
+    .about-heading {
+        margin-left: 20px;
+    }
+}
+
+/* Skills Section Styling */
+.skills {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.technical-skills {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    padding: 0 100px;
+}
+
+.skill-card {
+    background: #111;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff0000;
+}
+
+/* Projects Section Styling */
+.projects {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 100px;
+}
+
+.project-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.project-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.project-description {
+    color: #ccc;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+.tech-tag {
+    background: #222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.view-live {
+    display: inline-block;
+    background: #ff0066;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-live:hover {
+    background: #cc0052;
+}
+
+/* Experience Section Styling */
+.experience {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 100px;
+}
+
+.experience-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.experience-image {
+    width: 100%;
+    height: 200px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-content {
+    padding: 20px;
+}
+
+.experience-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.company-name {
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.experience-duration {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.experience-description {
+    color: #fff;
+    margin: 15px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* Opportunities Section Styling */
+.opportunities {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: auto;
+    margin-top: 0;
+    color: #fff;
+}
+
+.opportunities-heading {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+/* Add padding to align the text content */
+.opportunities-content {
+    padding: 0 100px;
+    /* Match the horizontal padding of other content sections */
+}
+
+@media (max-width: 576px) {
+    .opportunities-heading {
+        font-size: 2rem;
+        margin-left: 20px;
+    }
+
+    /* Adjust padding for smaller screens */
+    .opportunities-content {
+        padding: 0 20px;
+    }
+}
+
+/* Social Section Styling */
+.social {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: auto;
+    margin-top: -20px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.social-card {
+    background: #111;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    background: #1a1a1a;
+    border-color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+.social-card i {
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover i {
+    transform: scale(1.2);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 60px 0 20px;
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #ff0000;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li i {
+    margin-right: 10px;
+    color: #ff0000;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Navigation Wheel Styling */
+@media (max-width: 576px) {
+    .nav-wheel {
+        display: none !important;
+    }
+}
+
+@media (min-width: 577px) {
+    .nav-wheel {
+        display: none !important;
+    }
+}
+
+/* Resume Buttons Styling */
+.resume-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.resume-buttons .btn {
+    position: static;
+    transform: none;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .navbar .name {
+        margin-bottom: 18px;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}
+
+/* Animation for sections */
+.about-me,
+.skills,
+.projects,
+.experience,
+.social {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active link style */
+.navbar a.active {
+    color: #ff0000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* All CSS from index.html <style> tags goes here. */
+/* ... (CSS already provided in your previous style.css and all <style> blocks from index.html) ... */
+
+/* Combined styles for all main section headings */
+.technical-skills,
+.recent-projects,
+.recent-experience,
+.connect-heading,
+.opportunities-heading {
+    /* Add the other heading classes here */
+    color: #333;
+    /* Use the same color */
+    font-size: 3.5rem;
+    /* Use the same base size */
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    /* Use the same base margin */
+}
+
+@media (max-width: 576px) {
+
+    /* Apply consistent styling for all main section headings on small screens */
+    .technical-skills,
+    .about-heading,
+    /* Keep about-heading separate as it has different behavior */
+    .recent-projects,
+    .recent-experience,
+    .connect-heading,
+    .opportunities-heading {
+        /* Add the other heading classes here */
+        /* color: #333; This is already in the combined rule */
+        font-size: 2rem;
+        /* Use the same smaller size */
+        /* font-weight: bold; This is already in the combined rule */
+        /* margin-bottom: 50px; This is already in the combined rule */
+        margin-left: 20px;
+        /* Use the same smaller margin */
+    }
+}
+
+/* Remove specific styling for .recent-projects here */
+/* .recent-projects {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+} */
+
+/* Remove specific styling for .recent-experience here */
+/* .recent-experience {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+} */
+
+/* Remove specific styling for .opportunities-heading here */
+/* .opportunities-heading {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+} */
+
+/* Remove specific styling for .connect-heading here */
+/* .connect-heading {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+} */
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Update the media queries for mobile responsiveness */
+
+@media (max-width: 576px) {
+
+    /* Skills Section Mobile Fix */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .skill-card {
+        width: 100%;
+        height: 120px;
+    }
+
+    /* Projects Section Mobile Fix */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    /* Experience Section Mobile Fix */
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .experience-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .experience-image {
+        height: 180px;
+    }
+
+    /* Social Grid Mobile Fix */
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    /* General Section Padding Fix */
+    .about-me,
+    .skills,
+    .projects,
+    .experience,
+    .opportunities,
+    .social {
+        padding: 60px 20px;
+    }
+
+    /* Section Title and Heading Fix */
+    .section-title {
+        margin-left: 20px;
+    }
+
+    .about-heading,
+    .technical-skills,
+    .recent-projects,
+    .recent-experience,
+    .connect-heading,
+    .opportunities-heading {
+        margin-left: 20px;
+        font-size: 2rem;
+    }
+
+    /* Project Content Fix */
+    .project-content {
+        padding: 15px;
+    }
+
+    .project-tech {
+        gap: 5px;
+    }
+
+    .tech-tag {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+
+    /* Experience Content Fix */
+    .experience-content {
+        padding: 15px;
+    }
+
+    .tech-stack {
+        gap: 5px;
+    }
+}
+
+/* Add a max-width to prevent overflow on larger mobile devices */
+@media (min-width: 577px) and (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 40px;
+    }
+
+    .projects-grid,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+}
