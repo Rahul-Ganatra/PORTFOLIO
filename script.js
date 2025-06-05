@@ -6,6 +6,7 @@ var typed = new Typed('#typed-text', {
     strings: [
         'HELLO, I AM <span class="rahul">RAHUL</span>',
         'DATA <span class="scientist">SCIENCE</span>',
+        'DATA <span class="analyst">ANALYST</span>',
         'FLUTTER <span class="developer">DEVELOPER</span>',
         'WELCOME TO MY <span class="site">SITE</span>'
     ],

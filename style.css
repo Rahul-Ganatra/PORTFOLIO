@@ -145,6 +145,10 @@ header h1 {
     color: yellow;
 }
 
+.analyst {
+    color: coral;
+}
+
 .developer {
     color: orange;
 }
