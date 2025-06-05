@@ -4,28 +4,4 @@
     <loc>https://rahul-ganatra.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#about-me</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#skills</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#projects</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#experience</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#opportunities</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rahul-ganatra.netlify.app/#contact</loc>
-    <priority>0.7</priority>
-  </url>
 </urlset> 
