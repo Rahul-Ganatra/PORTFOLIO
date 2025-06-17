@@ -1194,27 +1194,103 @@ html {
     .achievements-heading {
         font-size: 2rem;
         margin-left: 20px;
+        margin-bottom: 30px;
     }
 
     .certifications-grid,
     .achievements-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
         padding: 0 20px;
     }
 
     .certification-card,
     .achievement-card {
-        padding: 20px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .certification-icon,
     .achievement-icon {
-        width: 50px;
-        height: 50px;
+        margin-bottom: 15px;
     }
 
-    .certification-icon i,
-    .achievement-icon i {
-        font-size: 20px;
+    .certification-content h3 {
+        font-size: 1.1rem;
     }
+
+    .certification-content p {
+        font-size: 0.85rem;
+    }
+
+    .view-certificate {
+        margin-top: 15px;
+        display: inline-block;
+    }
+
+    .achievement-description {
+        font-size: 0.85rem;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    /* General Section Padding Fix */
+    .certifications,
+    .achievements {
+        padding: 40px 20px;
+    }
+
+    /* Section Title Fix */
+    .section-title {
+        margin-left: 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Add tablet view optimization */
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .certifications-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+
+    .certifications-heading,
+    .achievements-heading {
+        font-size: 2.5rem;
+        margin-left: 40px;
+    }
+
+    .section-title {
+        margin-left: 40px;
+    }
+}
+
+/* Add styles for better card spacing on all devices */
+.certification-card,
+.achievement-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certification-content,
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Improve text readability */
+.certification-content p,
+.achievement-content p {
+    line-height: 1.4;
+}
+
+.achievement-description {
+    line-height: 1.5;
 }
