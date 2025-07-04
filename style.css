@@ -80,11 +80,23 @@ header {
 }
 
 header h1 {
+    background: red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    color: unset;
     font-size: 3.5rem;
     letter-spacing: 2px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: red;
+    transition: filter 0.3s;
+}
+
+header h1:hover,
+header h1:focus {
+    filter: brightness(1.2) drop-shadow(0 2px 8px #00c6ff88);
+    outline: none;
 }
 
 .typed-text {
@@ -1293,4 +1305,176 @@ html {
 
 .achievement-description {
     line-height: 1.5;
+}
+
+/* Updated Services Section Styling to match other sections */
+.services-section {
+    padding: 80px 40px;
+    background-color: #0a0a0a;
+    min-height: 60vh;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.services-section .section-title {
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    position: relative;
+    text-align: left;
+}
+
+.services-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: #ff0000;
+}
+
+.services-section .opportunities-heading {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    text-align: left;
+}
+
+.services-intro {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 100px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.service-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff0000;
+    outline: none;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #ff0000;
+    margin-bottom: 18px;
+    text-shadow: none;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.service-desc {
+    font-size: 1.05rem;
+    color: #ccc;
+    margin-bottom: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.services-cta {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.cta-link {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.cta-link:hover,
+.cta-link:focus {
+    color: blues;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    .services-cards {
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+    }
+
+    .services-section .opportunities-heading,
+    .services-section .section-title {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-section {
+        padding: 40px 10px;
+    }
+
+    .services-section .opportunities-heading {
+        font-size: 2rem;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .services-section .section-title {
+        margin-left: 20px;
+        font-size: 1rem;
+    }
+
+    .services-cards {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .service-card {
+        padding: 18px 8px;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .services-intro {
+        font-size: 1rem;
+    }
+
+    .services-cta {
+        font-size: 1rem;
+    }
 }
