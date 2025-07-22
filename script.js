@@ -116,3 +116,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
+
+// Horizontal scroll arrows for mobile (projects and experience)
+function addHorizontalScrollArrows(gridSelector, leftArrowId, rightArrowId, cardSelector) {
+    const grid = document.querySelector(gridSelector);
+    const leftArrow = document.getElementById(leftArrowId);
+    const rightArrow = document.getElementById(rightArrowId);
+    if (!grid || !leftArrow || !rightArrow) return;
+    const scrollAmount = () => {
+        const card = grid.querySelector(cardSelector);
+        return card ? card.offsetWidth + 20 : 200; // 20px gap fallback
+    };
+    // Remove previous listeners if any
+    leftArrow.onclick = null;
+    rightArrow.onclick = null;
+    leftArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        grid.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+    rightArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        grid.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+}
+
+function setupMobileArrows() {
+    if (window.innerWidth <= 576) {
+        addHorizontalScrollArrows('.projects-grid', 'projects-left-arrow', 'projects-right-arrow', '.project-card');
+        addHorizontalScrollArrows('.experience-grid', 'experience-left-arrow', 'experience-right-arrow', '.experience-card');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setupMobileArrows);
+window.addEventListener('resize', setupMobileArrows); 

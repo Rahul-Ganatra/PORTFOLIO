@@ -186,6 +186,13 @@
         <h3 class="section-title">PROJECTS</h3>
         <h2 class="recent-projects">RECENT PROJECTS</h2>
 
+        <div class="scroll-arrows-container mobile-only">
+            <button id="projects-left-arrow" class="scroll-arrow" aria-label="Scroll projects left"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button id="projects-right-arrow" class="scroll-arrow" aria-label="Scroll projects right"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+
         <div class="projects-grid">
             <!-- Manually added project cards -->
             <div class="project-card">
@@ -434,8 +441,46 @@
         <h3 class="section-title">EXPERIENCE</h3>
         <h2 class="recent-experience">WORK EXPERIENCE</h2>
 
+        <div class="scroll-arrows-container mobile-only">
+            <button id="experience-left-arrow" class="scroll-arrow" aria-label="Scroll experience left"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button id="experience-right-arrow" class="scroll-arrow" aria-label="Scroll experience right"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+
         <div class="experience-grid">
-            <!-- Experience Card 1 -->
+            <!-- Latest Experience Card First -->
+            <div class="experience-card">
+                <div class="experience-image">
+                    <img src="blackcoffer1.png" alt="Company Logo"
+                        onerror="this.src='https://via.placeholder.com/350x200?text=Company+Logo'">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-title">Software Engineer Associate</h3>
+                    <h4 class="company-name">BlackCoffer</h4>
+                    <p class="experience-duration">July 2025 - Present </p>
+                    <ul class="experience-description">
+                        <li>Developed scalable data-driven solutions and web applications using Python, Flask, and
+                            modern JavaScript frameworks.</li>
+                        <li>Collaborated with cross-functional teams to design, implement, and optimize machine learning
+                            models for business analytics and client projects.</li>
+                        <li>Automated data collection, cleaning, and visualization pipelines, improving project
+                            efficiency and data quality.</li>
+                        <li>Contributed to API development, integration, and deployment on cloud platforms, ensuring
+                            robust and secure data access.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next JS</span>
+                        <span class="tech-tag">Neo4j</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">APIs</span>
+                        <span class="tech-tag">Cloud</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Previous Experience Card -->
             <div class="experience-card">
                 <div class="experience-image">
                     <img src="s4ds black.jpg" alt="Company Logo"
@@ -463,44 +508,11 @@
                     </div>
                 </div>
             </div>
-            <div class="experience-card">
-                <div class="experience-image">
-                    <img src="blackcoffer1.png" alt="Company Logo"
-                        onerror="this.src='https://via.placeholder.com/350x200?text=Company+Logo'">
-                </div>
-                <div class="experience-content">
-                    <h3 class="experience-title">Software Engineer Associate</h3>
-                    <h4 class="company-name">BlackCoffer</h4>
-                    <p class="experience-duration">July 2025 - Present </p>
-                    <ul class="experience-description">
-                        <li>Developed scalable data-driven solutions and web applications using Python, Flask, and
-                            modern JavaScript frameworks.</li>
-                        <li>Collaborated with cross-functional teams to design, implement, and optimize machine learning
-                            models for business analytics and client projects.</li>
-                        <li>Automated data collection, cleaning, and visualization pipelines, improving project
-                            efficiency and data quality.</li>
-                        <li>Contributed to API development, integration, and deployment on cloud platforms, ensuring
-                            robust and secure data access.</li>
-
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Next JS</span>
-                        <span class="tech-tag">Neo4j</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">APIs</span>
-                        <span class="tech-tag">Cloud</span>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section" aria-labelledby="services-heading">
+    <section id="services" class="services-section fade-in" aria-labelledby="services-heading">
         <h3 class="section-title">SERVICES</h3>
         <h2 class="opportunities-heading" id="services-heading">WHAT I OFFER</h2>
         <div class="services-intro">
@@ -514,23 +526,18 @@
             <div class="service-card" role="listitem" aria-label="Flutter App Development">
                 <div class="service-icon" aria-hidden="true"><i class="fab fa-android"></i></div>
                 <h3 class="service-title">Flutter App Development</h3>
-                <p class="service-desc">Crafting visually stunning, accessible, and high-performance mobile applications
-                    for Android and iOS using Flutter. I focus on seamless user experiences, beautiful interfaces, and
-                    robust functionality for all users.</p>
+                <p class="service-desc">Build beautiful, high-performance mobile apps for Android and iOS using Flutter.
+                </p>
             </div>
             <div class="service-card" role="listitem" aria-label="Data Science">
                 <div class="service-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
                 <h3 class="service-title">Data Science</h3>
-                <p class="service-desc">Transforming raw data into actionable insights with advanced analytics, machine
-                    learning, and AI. I help organizations make informed decisions and unlock the true value of their
-                    data.</p>
+                <p class="service-desc">Turn data into actionable insights with machine learning and analytics.</p>
             </div>
             <div class="service-card" role="listitem" aria-label="Data Analysis">
                 <div class="service-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
                 <h3 class="service-title">Data Analysis</h3>
-                <p class="service-desc">Delivering clear, meaningful, and accessible data visualizations and reports. I
-                    turn complex datasets into stories that everyone can understand, regardless of their background or
-                    abilities.</p>
+                <p class="service-desc">Visualize and interpret complex data for clear, informed decisions.</p>
             </div>
         </div>
         <div class="services-cta">
@@ -541,7 +548,7 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
+    <section id="certifications" class="certifications fade-in">
         <h3 class="section-title">CERTIFICATIONS</h3>
         <h2 class="certifications-heading">CERTIFICATIONS</h2>
 
@@ -612,7 +619,7 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
+    <section id="achievements" class="achievements fade-in">
         <h3 class="section-title">ACHIEVEMENTS & ROLES</h3>
         <h2 class="achievements-heading">ACHIEVEMENTS & ROLES</h2>
 
@@ -625,8 +632,6 @@
                     <h3>2nd Runner Up</h3>
                     <p>AlgoForge 2025</p>
                     <span class="achievement-date">2025</span>
-                    <p class="achievement-description">Secured 3rd position in 24 hours offline hackathon with
-                        innovative idea and implementation.</p>
                 </div>
             </div>
 
@@ -638,8 +643,6 @@
                     <h3>Secretary</h3>
                     <p>Society for Data Science (S4DS) - KJSIT</p>
                     <span class="achievement-date">May 2024 - Present</span>
-                    <p class="achievement-description">Leading and coordinating technical initiatives, workshops,
-                        hackathons and events focused on data science and AI technologies.</p>
                 </div>
             </div>
 
@@ -651,8 +654,6 @@
                     <h3>Organizing Head</h3>
                     <p>Student Council (SC) - KJSIT</p>
                     <span class="achievement-date">January 2023 - January 2024</span>
-                    <p class="achievement-description">Managing and coordinating college cultural and sports events,
-                        fostering student engagement, and promoting academic excellence.</p>
                 </div>
             </div>
         </div>
