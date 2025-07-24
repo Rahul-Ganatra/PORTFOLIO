@@ -149,3 +149,69 @@ function setupMobileArrows() {
 
 document.addEventListener('DOMContentLoaded', setupMobileArrows);
 window.addEventListener('resize', setupMobileArrows); 
+
+function createScrollDots(gridSelector, cardSelector, dotsClass) {
+    const grid = document.querySelector(gridSelector);
+    if (!grid) return;
+    // Remove existing dots
+    const existingDots = grid.nextElementSibling;
+    if (existingDots && existingDots.classList && existingDots.classList.contains(dotsClass)) {
+        existingDots.remove();
+    }
+    const cards = grid.querySelectorAll(cardSelector);
+    if (cards.length <= 1) return;
+    const dots = document.createElement('div');
+    dots.className = dotsClass;
+    cards.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (idx === 0 ? ' active' : '');
+        dot.addEventListener('click', function() {
+            cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        });
+        dots.appendChild(dot);
+    });
+    grid.parentNode.insertBefore(dots, grid.nextSibling);
+
+    // Update active dot on scroll
+    grid.addEventListener('scroll', function() {
+        let activeIdx = 0;
+        let minDiff = Infinity;
+        cards.forEach((card, idx) => {
+            const diff = Math.abs(card.getBoundingClientRect().left - grid.getBoundingClientRect().left);
+            if (diff < minDiff) {
+                minDiff = diff;
+                activeIdx = idx;
+            }
+        });
+        dots.querySelectorAll('.dot').forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === activeIdx);
+        });
+    });
+}
+
+function setupScrollDots() {
+    // Only show dots on mobile
+    document.querySelectorAll('.scroll-dots').forEach(d => d.remove());
+    if (window.innerWidth > 576) return;
+    createScrollDots('.projects-grid', '.project-card', 'scroll-dots');
+    createScrollDots('.experience-grid', '.experience-card', 'scroll-dots');
+}
+
+document.addEventListener('DOMContentLoaded', setupScrollDots);
+window.addEventListener('resize', setupScrollDots); 
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Disable F12, Ctrl+Shift+I/J/C/U, Ctrl+U, etc.
+document.addEventListener('keydown', function(e) {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+    (e.ctrlKey && e.key.toUpperCase() === 'U')
+  ) {
+    e.preventDefault();
+  }
+}); 
