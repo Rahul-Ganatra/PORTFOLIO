@@ -1511,7 +1511,6 @@ html {
 
 @media (max-width: 576px) {
 
-    .projects,
     .experience {
         position: relative;
     }
@@ -1555,12 +1554,10 @@ html {
         box-shadow: none;
     }
 
-    #projects-left-arrow,
     #experience-left-arrow {
         left: 0;
     }
 
-    #projects-right-arrow,
     #experience-right-arrow {
         right: 0;
     }
@@ -1572,7 +1569,6 @@ html {
         box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
     }
 
-    .projects-grid,
     .experience-grid {
         position: relative;
     }

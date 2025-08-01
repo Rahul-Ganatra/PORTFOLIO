@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }); 
 
-// Horizontal scroll arrows for mobile (projects and experience)
+// Horizontal scroll arrows for mobile (experience only)
 function addHorizontalScrollArrows(gridSelector, leftArrowId, rightArrowId, cardSelector) {
     const grid = document.querySelector(gridSelector);
     const leftArrow = document.getElementById(leftArrowId);
@@ -142,7 +142,6 @@ function addHorizontalScrollArrows(gridSelector, leftArrowId, rightArrowId, card
 
 function setupMobileArrows() {
     if (window.innerWidth <= 576) {
-        addHorizontalScrollArrows('.projects-grid', 'projects-left-arrow', 'projects-right-arrow', '.project-card');
         addHorizontalScrollArrows('.experience-grid', 'experience-left-arrow', 'experience-right-arrow', '.experience-card');
     }
 }
@@ -205,13 +204,13 @@ document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
 
-// Disable F12, Ctrl+Shift+I/J/C/U, Ctrl+U, etc.
-document.addEventListener('keydown', function(e) {
-  if (
-    e.key === 'F12' ||
-    (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
-    (e.ctrlKey && e.key.toUpperCase() === 'U')
-  ) {
-    e.preventDefault();
-  }
-}); 
+// // Disable F12, Ctrl+Shift+I/J/C/U, Ctrl+U, etc.
+// document.addEventListener('keydown', function(e) {
+//   if (
+//     e.key === 'F12' ||
+//     (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+//     (e.ctrlKey && e.key.toUpperCase() === 'U')
+//   ) {
+//     e.preventDefault();
+//   }
+// }); 
