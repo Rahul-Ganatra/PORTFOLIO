@@ -3,92 +3,277 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#fffdfa">
+  <meta name="theme-color" content="#0a0a0c">
   <meta name="description" content="Rahul Ganatra — Data Analyst and AI Engineer. Selected work in analytics, AI, computer vision and software engineering.">
   <title>Rahul Ganatra — Data Analyst & AI Engineer</title>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/collage.css">
-  <link rel="stylesheet" href="css/scale.css">
-  <link rel="stylesheet" href="css/interaction.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/visuals.js"></script>
   <script defer src="js/main.js"></script>
+  <noscript><style>.loader,.cursor{display:none}</style></noscript>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><div id="progressFill"></div></div>
+  <!-- Intro loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-grid"></div>
+    <div class="loader-mark"><span>R</span><span>G</span><i></i></div>
+    <div class="loader-foot">
+      <span>Rahul Ganatra — Portfolio ’26</span>
+      <span class="loader-count"><b id="loaderCount">000</b>%</span>
+    </div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><div class="cursor-ring" id="cursorRing"><span id="cursorLabel"></span></div><div class="cursor-dot" id="cursorDot"></div></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i id="progressFill"></i></div>
+
   <header class="topbar" id="topbar">
-    <a class="logo" href="#home" aria-label="Rahul Ganatra home">RG<span>/</span></a>
+    <a class="logo" href="#home" aria-label="Rahul Ganatra home">RG<span>.</span></a>
     <nav id="nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Credentials</a><a href="#education">Education</a><a href="#extra">Extra</a>
+      <a href="#about"><span>About</span></a>
+      <a href="#journey"><span>Journey</span></a>
+      <a href="#projects"><span>Work</span></a>
+      <a href="#skills"><span>Skills</span></a>
+      <a href="#credentials"><span>Research</span></a>
+      <a href="#education"><span>Education</span></a>
     </nav>
     <div class="header-actions">
-      <a class="button button-dark nav-contact" href="mailto:rahuljganatra07@gmail.com">Let's Connect <span>↗</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      <a class="btn btn-ghost nav-contact magnetic" href="mailto:rahuljganatra07@gmail.com"><span>Let’s talk</span><i>↗</i></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-name eyebrow"><span></span> R A H U L&nbsp; G A N A T R A <span></span></div>
-      <h1>Data · Analytics · AI <em>Builder</em></h1>
-      <p>I turn data into insights, build intelligent systems, and solve real-world problems with analytics and AI.</p>
-      <div class="hero-buttons"><a href="#projects" class="button button-orange">Explore My Work <span>↗</span></a><a href="RAHUL JIGNESH GANATRA RESUME.pdf" download class="button button-outline">Download Résumé <span>↓</span></a></div>
-      <div class="hero-proof"><span><i></i> Available for meaningful work</span><span>Data · AI · Product</span><span>Based in Mumbai, India</span></div>
-      <svg class="hero-wave wave-left" viewBox="0 0 600 145" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 25C130 10 160 140 360 117C480 103 504 50 620 100" stroke="currentColor" stroke-width="1"/><path d="M-10 42C130 27 160 157 360 134C480 120 504 67 620 117" stroke="currentColor" stroke-opacity=".15" stroke-width="1"/></svg>
-      <svg class="hero-wave wave-right" viewBox="0 0 600 145" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 101C129 145 230 129 316 71C436-10 510 10 620 36" stroke="currentColor" stroke-width="1"/><path d="M-10 118C129 162 230 146 316 88C436 7 510 27 620 53" stroke="currentColor" stroke-opacity=".15" stroke-width="1"/></svg>
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-top">
+        <span class="hero-tag" data-hero="1"><i></i> Available for meaningful work</span>
+        <span class="hero-tag mono" data-hero="1">Mumbai, India · 19.07°N 72.87°E</span>
+      </div>
+      <h1 class="hero-title" aria-label="Rahul Ganatra">
+        <span class="line"><span class="line-inner" data-hero="2">Rahul</span></span>
+        <span class="line"><span class="line-inner" data-hero="3"><em>Ganatra</em><sup>©</sup></span></span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-lede" data-hero="4">Data analyst &amp; AI engineer. I turn messy data into clear insight and build intelligent systems that solve real problems.</p>
+        <div class="hero-roles mono" data-hero="4" aria-label="Disciplines">
+          <span>Data Analytics</span><span>Computer Vision</span><span>Generative AI</span><span>Full-Stack</span>
+        </div>
+        <div class="hero-cta" data-hero="5">
+          <a href="#projects" class="btn btn-accent magnetic"><span>Explore my work</span><i>↘</i></a>
+          <a href="RAHUL JIGNESH GANATRA RESUME.pdf" download class="btn btn-ghost magnetic"><span>Résumé</span><i>↓</i></a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About" data-hero="5"><span class="mono">Scroll</span><i></i></a>
     </section>
 
-    <section class="section about" id="about">
-      <div class="section-lead"><div class="section-kicker">ABOUT</div><h2>A little<br>about <em>me.</em></h2></div>
-      <div class="about-portrait" aria-label="Rahul's profile photo"><div class="portrait-card"><img class="portrait-photo" src="rahul photo.jpg" alt="Rahul Jignesh Ganatra"></div></div>
-      <div class="about-body"><p>I'm Rahul, a Data Analyst and AI Engineer who enjoys transforming messy data into useful insights and building practical intelligent systems. My work spans analytics, data pipelines, computer vision, and full-stack applications.</p><div class="stats"><div><strong data-count="4">4</strong><b>Featured projects</b></div><div><strong data-count="3">3</strong><b>Internships</b></div><div><strong data-count="2">2</strong><b>Publications</b></div></div><div class="about-signature">Turning complexity into <em>clarity.</em><span>RG / 2026</span></div></div>
-    </section>
-
-    <section class="section journey" id="journey">
-      <div class="section-lead"><div class="section-kicker">MY JOURNEY</div><h2>A timeline of<br>my key <em>experiences.</em></h2><p>The projects, roles and milestones that shaped my journey so far.</p></div>
-      <div class="journey-main"><div class="journey-cards" id="journeyCards" role="tablist" aria-label="Career milestones">
-        <button class="journey-card active" data-journey="0" role="tab" aria-selected="true"><span class="journey-icon">▣</span><span class="date-pill">Feb – Aug 2026</span><strong>Data Analyst Intern</strong><small>Continuum Media LLC</small><span class="card-arrow">↗</span></button>
-        <button class="journey-card" data-journey="1" role="tab" aria-selected="false"><span class="journey-icon">▤</span><span class="date-pill">Aug – Oct 2025</span><strong>Full Stack Developer</strong><small>WhizMedia</small><span class="card-arrow">↗</span></button>
-        <button class="journey-card" data-journey="2" role="tab" aria-selected="false"><span class="journey-icon">▱</span><span class="date-pill">Jul – Aug 2025</span><strong>Software Engineer Associate</strong><small>BlackCoffer</small><span class="card-arrow">↗</span></button>
-      </div><div class="journey-track"><span id="journeyLine"></span><i class="selected"></i><i></i><i></i></div><div class="journey-detail" id="journeyDetail" aria-live="polite">Cleaned and structured high-volume Excel and PDF datasets, improved reporting accuracy, and prepared investor-ready reports.</div></div>
-    </section>
-
-    <section class="section projects-section" id="projects">
-      <div class="section-lead"><div class="section-kicker">PROJECTS</div><h2>Things<br>I've <em>built.</em></h2><p>Selected work across data analytics, AI, research and software engineering.</p><a class="outline-pill" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer">View All Projects <span>↗</span></a></div>
-      <div class="project-area"><div class="carousel" id="carousel" aria-label="Featured projects">
-        <button class="carousel-arrow prev" id="projectPrev" aria-label="Previous project">←</button><div class="carousel-stage" id="carouselStage"></div><button class="carousel-arrow next" id="projectNext" aria-label="Next project">→</button>
-      </div><div class="carousel-dots" id="carouselDots" role="group" aria-label="Choose featured project"></div></div>
-    </section>
-
-    <section class="section skills" id="skills">
-      <div class="section-lead"><div class="section-kicker">SKILLS</div><h2>Tools &amp;<br><em>Technologies.</em></h2><p>The stack I use to analyze data, engineer solutions and ship working applications.</p></div>
-      <div class="orbit-wrap" id="orbitWrap" aria-label="Skills orbit. Select a category on the right to filter tools."><div class="orbit-ring"><span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span></div><div id="orbitTags" class="orbit-tags"></div></div>
-      <div class="skill-categories" id="skillCategories"><button class="skill-category active" data-skill="development"><span class="category-icon">&lt;/&gt;</span><strong>Development</strong><small>React · Flask · FastAPI · Flutter</small></button><button class="skill-category" data-skill="analytics"><span class="category-icon">▥</span><strong>Data &amp; Analytics</strong><small>SQL · Pandas · Power BI · Excel</small></button><button class="skill-category" data-skill="ai"><span class="category-icon">◇</span><strong>AI &amp; Computer Vision</strong><small>OpenCV · SHAP · RAG · NLP</small></button><button class="skill-category" data-skill="databases"><span class="category-icon">⬡</span><strong>Databases &amp; Cloud</strong><small>PostgreSQL · MySQL · Firebase</small></button><button class="skill-category" data-skill="tools"><span class="category-icon">⚙</span><strong>Tools &amp; Platforms</strong><small>Git · Docker · VS Code</small></button></div>
-    </section>
-
-    <section class="section credentials" id="credentials">
-      <div class="section-lead"><div class="section-kicker">CREDENTIALS</div><h2>Publications &amp;<br><em>Research.</em></h2><p>Research contributions in computer vision, safety, and low-resource NLP.</p></div>
-      <div class="credential-column"><div class="credential-head"><span class="line-icon">▤</span><h3>Publications</h3></div><a class="credential-row" href="https://scholar.google.com/scholar?q=An+AI-Powered+Situational+Awareness+Platform+for+Proactive+Crowd+Safety+at+Mass+Events" target="_blank" rel="noopener noreferrer"><strong>An AI-Powered Situational Awareness Platform for Proactive Crowd Safety at Mass Events</strong><span>Springer Nature · ICDMAI 2026</span><b>↗</b></a><a class="credential-row" href="https://scholar.google.com/scholar?q=Comparative+Analysis+of+Human+Annotation+and+LLM-Based+Classification+for+Gujarati+News+Articles" target="_blank" rel="noopener noreferrer"><strong>Comparative Analysis of Human Annotation and LLM-Based Classification for Gujarati News Articles</strong><span>Springer Nature · ICDMAI 2026</span><b>↗</b></a></div>
-    </section>
-
-    <section class="section education" id="education"><div class="section-lead"><div class="section-kicker">EDUCATION</div><h2>Where I<br><em>learned.</em></h2><p>Academic foundations in artificial intelligence, data science and engineering.</p></div><div class="education-list"><div class="education-item"><span class="line-icon">◇</span><div><strong>M.Tech — Artificial Intelligence &amp; Data Science</strong><span>K J Somaiya School of Engineering · Expected 2028</span></div></div><div class="education-item"><span class="line-icon">◇</span><div><strong>B.Tech — Artificial Intelligence &amp; Data Science</strong><span>K J Somaiya Institute of Technology · 2026 · CGPA 9.01</span></div></div></div></section>
-
-    <section class="section extra" id="extra"><div class="section-lead"><div class="section-kicker">EXTRA CURRICULAR</div><h2>Beyond<br><em>Academics.</em></h2><p>Leadership, event organization and community-building beyond the classroom.</p></div><div class="extra-card"><div class="extra-symbol" aria-hidden="true">♧</div><div class="extra-content"><h3>Society for Data Science — KJSIT</h3><span class="extra-pill">Secretary</span><p>Organized a 36-hour offline hackathon with 200+ participants, supporting collaboration and the student data science community.</p><div class="extra-sub">Student Council — Organizing Head · Led a team of 15, helping deliver events engaging 1,000+ attendees.</div></div><svg class="extra-wave" viewBox="0 0 260 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".9"> <path d="M0 92 Q65 17 127 65 T260 20"/><path d="M0 97 Q65 22 127 70 T260 25"/><path d="M0 102 Q65 27 127 75 T260 30"/><path d="M0 107 Q65 32 127 80 T260 35"/><path d="M0 112 Q65 37 127 85 T260 40"/><path d="M0 117 Q65 42 127 90 T260 45"/><path d="M0 122 Q65 47 127 95 T260 50"/><path d="M0 127 Q65 52 127 100 T260 55"/></g></svg></div></section>
-
-    <section class="contact" id="contact"><div class="contact-heading"><span class="slash">07 / CONTACT</span><h2>Have a project<br><em>in mind?</em></h2></div><div class="contact-right"><div class="contact-eyebrow">SOCIALS</div><p>Send me an email or reach out through one of the channels below. I’ll get back to you as soon as possible.</p><p class="contact-availability">Open to meaningful work: analytics, AI, product and startup opportunities.</p><div class="contact-links"><a href="mailto:rahuljganatra07@gmail.com" class="button button-dark">rahuljganatra07@gmail.com ↗</a><a class="round-social" href="https://www.linkedin.com/in/rahul-ganatra-rg7404/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a class="round-social" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer" aria-label="GitHub">gh</a></div></div><svg class="contact-wave left" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q80 15 130 75 T300 90" fill="none" stroke="currentColor"/></svg><svg class="contact-wave right" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 Q130 100 190 45 T300 18" fill="none" stroke="currentColor"/></svg></section>
-  </main>
-  <footer class="footer">
-    <div class="footer-links">
-      <div><p>Navigate</p><a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a></div>
-      <div><p>&nbsp;</p><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Credentials</a><a href="#education">Education</a><a href="#extra">Extra</a></div>
-      <div><p>Elsewhere</p><a href="https://www.linkedin.com/in/rahul-ganatra-rg7404/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="RAHUL JIGNESH GANATRA RESUME.pdf" download>Résumé ↗</a></div>
-      <div><p>Say hello</p><a href="mailto:rahuljganatra07@gmail.com">rahuljganatra07@gmail.com</a><span>Open to meaningful work</span><span>Mumbai · India</span></div>
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Data Analytics</span><b>✦</b><span>Computer Vision</span><b>✦</b><span>Explainable AI</span><b>✦</b><span>Retrieval-Augmented Generation</span><b>✦</b><span>Full-Stack Engineering</span><b>✦</b><span>Business Intelligence</span><b>✦</b>
+        <span>Data Analytics</span><b>✦</b><span>Computer Vision</span><b>✦</b><span>Explainable AI</span><b>✦</b><span>Retrieval-Augmented Generation</span><b>✦</b><span>Full-Stack Engineering</span><b>✦</b><span>Business Intelligence</span><b>✦</b>
+      </div>
     </div>
-    <div class="footer-name" aria-label="Rahul Ganatra">G A N A T R A<span>.</span></div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Rahul Ganatra</span><span>Data Analyst · AI Engineer · Mumbai</span><a href="#home">Back to top ↑</a></div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="section-head">
+        <div class="kicker mono" data-reveal><span>(01)</span> About</div>
+        <h2 data-split>A little about <em>me.</em></h2>
+      </div>
+      <div class="about-grid">
+        <figure class="portrait" data-reveal data-cursor="Hi!">
+          <div class="portrait-frame"><img src="rahul photo.jpg" alt="Rahul Jignesh Ganatra" loading="lazy"></div>
+          <figcaption class="mono"><span>RG / 2026</span><span>Mumbai, IN</span></figcaption>
+        </figure>
+        <div class="about-body">
+          <p class="about-statement" id="aboutStatement">I’m Rahul, a Data Analyst and AI Engineer who enjoys transforming messy data into useful insights and building practical intelligent systems. My work spans analytics, data pipelines, computer vision, and full-stack applications.</p>
+          <div class="stats" data-reveal>
+            <div class="stat"><strong data-count="4">0</strong><span>Featured projects</span></div>
+            <div class="stat"><strong data-count="3">0</strong><span>Internships</span></div>
+            <div class="stat"><strong data-count="2">0</strong><span>Publications</span></div>
+            <div class="stat"><strong data-count="9.01" data-decimals="2">0</strong><span>B.Tech CGPA</span></div>
+          </div>
+          <p class="signature" data-reveal>Turning complexity into <em>clarity.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="section journey" id="journey">
+      <div class="section-head">
+        <div class="kicker mono" data-reveal><span>(02)</span> Journey</div>
+        <h2 data-split>A timeline of my key <em>experiences.</em></h2>
+        <p class="section-sub" data-reveal>The roles and milestones that shaped my journey so far.</p>
+      </div>
+      <div class="journey-wrap" data-reveal>
+        <div class="journey-rail" aria-hidden="true"><i id="journeyLine"></i></div>
+        <div class="journey-cards" id="journeyCards" role="tablist" aria-label="Career milestones">
+          <button class="journey-card is-active" data-journey="0" role="tab" aria-selected="true">
+            <span class="journey-dot"></span>
+            <span class="journey-date mono">Feb – Aug 2026</span>
+            <strong>Data Analyst Intern</strong>
+            <small>Continuum Media LLC</small>
+            <span class="journey-num mono">01</span>
+          </button>
+          <button class="journey-card" data-journey="1" role="tab" aria-selected="false">
+            <span class="journey-dot"></span>
+            <span class="journey-date mono">Aug – Oct 2025</span>
+            <strong>Full Stack Developer</strong>
+            <small>WhizMedia</small>
+            <span class="journey-num mono">02</span>
+          </button>
+          <button class="journey-card" data-journey="2" role="tab" aria-selected="false">
+            <span class="journey-dot"></span>
+            <span class="journey-date mono">Jul – Aug 2025</span>
+            <strong>Software Engineer Associate</strong>
+            <small>BlackCoffer</small>
+            <span class="journey-num mono">03</span>
+          </button>
+        </div>
+        <div class="journey-detail" id="journeyDetail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work" id="projects">
+      <div class="section-head work-head">
+        <div class="kicker mono" data-reveal><span>(03)</span> Selected work</div>
+        <h2 data-split>Things I’ve <em>built.</em></h2>
+        <p class="section-sub" data-reveal>Selected work across data analytics, AI, research and software engineering.</p>
+        <a class="link-arrow magnetic" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer" data-reveal><span>All projects on GitHub</span><i>↗</i></a>
+      </div>
+      <div class="showcase" id="showcase" data-reveal tabindex="-1">
+        <div class="showcase-glow" aria-hidden="true"></div>
+        <div class="showcase-index" id="showcaseIndex" role="tablist" aria-label="Featured projects"></div>
+        <div class="showcase-stage">
+          <div class="stage-visual" id="stageVisual" data-cursor="Open">
+            <div class="stage-glare" aria-hidden="true"></div>
+          </div>
+          <div class="stage-controls">
+            <button class="ctrl magnetic" id="projectPrev" aria-label="Previous project">←</button>
+            <span class="ctrl-count mono"><b id="projectCurrent">01</b> / <span id="projectTotal">04</span></span>
+            <button class="ctrl magnetic" id="projectNext" aria-label="Next project">→</button>
+          </div>
+          <div class="stage-info" id="stageInfo" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="section-head">
+        <div class="kicker mono" data-reveal><span>(04)</span> Skills</div>
+        <h2 data-split>Tools &amp; <em>technologies.</em></h2>
+        <p class="section-sub" data-reveal>The stack I use to analyze data, engineer solutions and ship working applications.</p>
+      </div>
+      <div class="skills-body" data-reveal>
+        <div class="skill-tabs" id="skillTabs" role="tablist" aria-label="Skill categories">
+          <span class="skill-tabs-pill" id="skillPill" aria-hidden="true"></span>
+          <button class="skill-tab is-active" data-skill="development" role="tab"><span>Development</span></button>
+          <button class="skill-tab" data-skill="analytics" role="tab"><span>Data &amp; Analytics</span></button>
+          <button class="skill-tab" data-skill="ai" role="tab"><span>AI &amp; Vision</span></button>
+          <button class="skill-tab" data-skill="databases" role="tab"><span>Databases &amp; Cloud</span></button>
+          <button class="skill-tab" data-skill="tools" role="tab"><span>Tools</span></button>
+        </div>
+        <div class="skill-cloud" id="skillCloud"></div>
+        <p class="skill-caption mono" id="skillCaption"></p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section credentials" id="credentials">
+      <div class="section-head">
+        <div class="kicker mono" data-reveal><span>(05)</span> Research</div>
+        <h2 data-split>Publications &amp; <em>research.</em></h2>
+        <p class="section-sub" data-reveal>Research contributions in computer vision, safety, and low-resource NLP.</p>
+      </div>
+      <div class="pub-list">
+        <a class="pub" data-reveal data-cursor="Read" href="https://scholar.google.com/scholar?q=An+AI-Powered+Situational+Awareness+Platform+for+Proactive+Crowd+Safety+at+Mass+Events" target="_blank" rel="noopener noreferrer">
+          <span class="pub-num mono">P.01</span>
+          <span class="pub-main"><strong>An AI-Powered Situational Awareness Platform for Proactive Crowd Safety at Mass Events</strong><span class="mono">Springer Nature · ICDMAI 2026</span></span>
+          <span class="pub-arrow">↗</span>
+        </a>
+        <a class="pub" data-reveal data-cursor="Read" href="https://scholar.google.com/scholar?q=Comparative+Analysis+of+Human+Annotation+and+LLM-Based+Classification+for+Gujarati+News+Articles" target="_blank" rel="noopener noreferrer">
+          <span class="pub-num mono">P.02</span>
+          <span class="pub-main"><strong>Comparative Analysis of Human Annotation and LLM-Based Classification for Gujarati News Articles</strong><span class="mono">Springer Nature · ICDMAI 2026</span></span>
+          <span class="pub-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- EDUCATION + EXTRA -->
+    <section class="section education" id="education">
+      <div class="section-head">
+        <div class="kicker mono" data-reveal><span>(06)</span> Education &amp; beyond</div>
+        <h2 data-split>Where I <em>learned</em> &amp; led.</h2>
+      </div>
+      <div class="edu-grid">
+        <article class="card spot" data-reveal>
+          <span class="card-tag mono">Expected 2028</span>
+          <h3>M.Tech — Artificial Intelligence &amp; Data Science</h3>
+          <p>K J Somaiya School of Engineering</p>
+        </article>
+        <article class="card spot" data-reveal>
+          <span class="card-tag mono">2026 · CGPA 9.01</span>
+          <h3>B.Tech — Artificial Intelligence &amp; Data Science</h3>
+          <p>K J Somaiya Institute of Technology</p>
+        </article>
+        <article class="card card-wide spot" id="extra" data-reveal>
+          <div class="extra-copy">
+            <span class="card-tag mono">Secretary · Society for Data Science — KJSIT</span>
+            <h3>Organized a 36-hour offline hackathon for the student data science community.</h3>
+            <p>Student Council — Organizing Head. Led a team of 15, helping deliver events engaging 1,000+ attendees.</p>
+          </div>
+          <div class="extra-stats">
+            <div><strong data-count="200" data-suffix="+">0</strong><span class="mono">Hackathon participants</span></div>
+            <div><strong data-count="36" data-suffix="h">0</strong><span class="mono">Non-stop build</span></div>
+            <div><strong data-count="1000" data-suffix="+">0</strong><span class="mono">Event attendees</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="kicker mono" data-reveal><span>(07)</span> Contact</div>
+      <h2 class="contact-title" data-split>Have a project <em>in mind?</em></h2>
+      <p class="contact-sub" data-reveal>Open to meaningful work in analytics, AI, product and startups. Send an email — I’ll get back to you as soon as possible.</p>
+      <div class="contact-actions" data-reveal>
+        <a href="mailto:rahuljganatra07@gmail.com" class="mail-blob magnetic" data-cursor="Write">
+          <span>Say hello</span>
+        </a>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:rahuljganatra07@gmail.com"><span class="mono">Email</span>rahuljganatra07@gmail.com<i>↗</i></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/rahul-ganatra-rg7404/" target="_blank" rel="noopener noreferrer"><span class="mono">LinkedIn</span>rahul-ganatra-rg7404<i>↗</i></a>
+          <a class="contact-link" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer"><span class="mono">GitHub</span>Rahul-Ganatra<i>↗</i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-word" aria-label="Ganatra" data-reveal>
+      <span>G</span><span>A</span><span>N</span><span>A</span><span>T</span><span>R</span><span>A</span><em>.</em>
+    </div>
+    <div class="footer-bottom mono">
+      <span>© <span id="year"></span> Rahul Ganatra</span>
+      <span>Data Analyst · AI Engineer · Mumbai</span>
+      <span id="localTime">Mumbai —</span>
+      <a href="#home" class="to-top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <dialog id="projectDialog" class="modal"><button id="modalClose" class="modal-close" aria-label="Close project details">×</button><div id="modalBody"></div></dialog>
+  <dialog id="projectDialog" class="modal" aria-labelledby="modalTitle">
+    <button id="modalClose" class="modal-close" aria-label="Close project details">×</button>
+    <div id="modalBody"></div>
+  </dialog>
 </body>
 </html>
