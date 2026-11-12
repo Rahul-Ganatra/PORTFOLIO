@@ -1,699 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="google-site-verification" content="bvb4JnBRUWNHX0UafO2xCAutpi2E-uqITHhNFxwH8U8" />
-    <meta name="description"
-        content="Rahul Jignesh Ganatra - Flutter Developer & Data Scientist. Explore my portfolio, projects, and experience in app development and data science." />
-    <title>Rahul Ganatra | Flutter Developer & Data Scientist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fffdfa">
+  <meta name="description" content="Rahul Ganatra — Data Analyst and AI Engineer. Selected work in analytics, AI, computer vision and software engineering.">
+  <title>Rahul Ganatra — Data Analyst & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/collage.css">
+  <link rel="stylesheet" href="css/scale.css">
+  <link rel="stylesheet" href="css/interaction.css">
+  <script defer src="js/main.js"></script>
 </head>
-
-<body id="top">
-    <nav class="navbar">
-        <div class="name">
-            <a href="#top">RG</a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links" id="nav-links">
-            <a href="#about-me" class="nav-link">About Me</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#experience" class="nav-link">Work Experience</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#certifications" class="nav-link">Certifications</a>
-            <a href="#achievements" class="nav-link">Achievements</a>
-            <a href="#contact" class="nav-link">Social</a>
-        </div>
+<body>
+  <div class="progress" aria-hidden="true"><div id="progressFill"></div></div>
+  <header class="topbar" id="topbar">
+    <a class="logo" href="#home" aria-label="Rahul Ganatra home">RG<span>/</span></a>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Credentials</a><a href="#education">Education</a><a href="#extra">Extra</a>
     </nav>
+    <div class="header-actions">
+      <a class="button button-dark nav-contact" href="mailto:rahuljganatra07@gmail.com">Let's Connect <span>↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
 
-    <div class="glass-morphism"></div>
-
-    <header>
-        <h1>Rahul Ganatra</h1>
-        <div id="typed-text" class="typed-text"></div>
-        <div class="resume-buttons">
-            <a href="RAHUL JIGNESH GANATRA AI.pdf" target="_blank">
-                <button class="btn">AI/ML Resume</button>
-            </a>
-            <a href="RAHUL JIGNESH GANATRA RESUME.pdf" target="_blank">
-                <button class="btn">App/Web Resume</button>
-            </a>
-        </div>
-    </header>
-
-
-    <img src="nnn.gif" class="background-video" alt="Neural Network Animation">
-
-    <div class="dots"></div>
-
-    <!-- About Me Section -->
-    <section id="about-me" class="about-me">
-        <h3 class="section-title">ABOUT</h3>
-        <h2 class="about-heading">ABOUT ME</h2>
-        <div class="about-content">
-            <div class="text">
-                <p>
-                    Hello, I am <b>Rahul Jignesh Ganatra</b>, a passionate Flutter developer, data analyst, and data
-                    scientist with a
-                    strong focus on building impactful mobile applications. With expertise in Flutter, I create seamless
-                    and user-friendly experiences, while my background in data science enables me to leverage machine
-                    learning and data-driven insights to solve complex problems. I am always eager to learn new
-                    technologies and continuously strive to improve my skills to deliver high-quality solutions.
-                    technologies and continuously strive to improve my skills to deliver high-quality solutions.
-                </p>
-            </div>
-            <div class="image-container">
-                <img src="rahul photo.jpg" alt="Rahul's Photo">
-            </div>
-        </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-name eyebrow"><span></span> R A H U L&nbsp; G A N A T R A <span></span></div>
+      <h1>Data · Analytics · AI <em>Builder</em></h1>
+      <p>I turn data into insights, build intelligent systems, and solve real-world problems with analytics and AI.</p>
+      <div class="hero-buttons"><a href="#projects" class="button button-orange">Explore My Work <span>↗</span></a><a href="RAHUL JIGNESH GANATRA RESUME.pdf" download class="button button-outline">Download Résumé <span>↓</span></a></div>
+      <div class="hero-proof"><span><i></i> Available for meaningful work</span><span>Data · AI · Product</span><span>Based in Mumbai, India</span></div>
+      <svg class="hero-wave wave-left" viewBox="0 0 600 145" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 25C130 10 160 140 360 117C480 103 504 50 620 100" stroke="currentColor" stroke-width="1"/><path d="M-10 42C130 27 160 157 360 134C480 120 504 67 620 117" stroke="currentColor" stroke-opacity=".15" stroke-width="1"/></svg>
+      <svg class="hero-wave wave-right" viewBox="0 0 600 145" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 101C129 145 230 129 316 71C436-10 510 10 620 36" stroke="currentColor" stroke-width="1"/><path d="M-10 118C129 162 230 146 316 88C436 7 510 27 620 53" stroke="currentColor" stroke-opacity=".15" stroke-width="1"/></svg>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h3 class="section-title">SKILLS</h3>
-        <h2 class="technical-skills">TECHNICAL SKILLS</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <img src="js.png" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-            <div class="skill-card">
-                <img src="html.png" alt="HTML">
-                <p>HTML</p>
-            </div>
-            <div class="skill-card">
-                <img src="css.png" alt="CSS">
-                <p>CSS</p>
-            </div>
-            <div class="skill-card">
-                <img src="firebase.png" alt="Firebase">
-                <p>Firebase</p>
-            </div>
-            <div class="skill-card">
-                <img src="react.png" alt="React.js">
-                <p>React JS</p>
-            </div>
-            <div class="skill-card">
-                <img src="git.png" alt="Git">
-                <p>Git</p>
-            </div>
-            <div class="skill-card">
-                <img src="flask.png" alt="Git">
-                <p>Flask</p>
-            </div>
-            <div class="skill-card">
-                <img src="python.png" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill-card">
-                <img src="github.png" alt="Github">
-                <p>Github</p>
-            </div>
-            <div class="skill-card">
-                <img src="flutter.png" alt="Flutter">
-                <p>Flutter</p>
-            </div>
-            <div class="skill-card">
-                <img src="dart.png" alt="Dart">
-                <p>Dart</p>
-            </div>
-            <div class="skill-card">
-                <img src="numpy.png" alt="Numpy">
-                <p>Numpy</p>
-            </div>
-            <div class="skill-card">
-                <img src="pandas.png" alt="Pandas">
-                <p>Pandas</p>
-            </div>
-            <div class="skill-card">
-                <img src="sk.png" alt="Scikit-learn">
-                <p>Scikit-Learn</p>
-            </div>
-            <div class="skill-card">
-                <img src="tf.png" alt="TensorFlow">
-                <p>TensorFlow</p>
-            </div>
-            <div class="skill-card">
-                <img src="streamlit.png" alt="Streamlit">
-                <p>Streamlit</p>
-            </div>
-            <div class="skill-card">
-                <img src="mysql.png" alt="MySQL">
-                <p>MySQL</p>
-            </div>
-            <div class="skill-card">
-                <img src="powerbi.png" alt="PowerBI">
-                <p>PowerBI</p>
-            </div>
-            <div class="skill-card">
-                <img src="mongodb.png" alt="PowerBI">
-                <p>MongoDB</p>
-            </div>
-            <div class="skill-card">
-                <img src="neo4j.png" alt="PowerBI">
-                <p>Neo4j</p>
-            </div>
-            <div class="skill-card">
-                <img src="nextjs.png" alt="PowerBI">
-                <p>Next JS</p>
-            </div>
-            <div class="skill-card">
-                <img src="postgresql.png" alt="PowerBI">
-                <p>PostgreSQL</p>
-            </div>
-            <div class="skill-card">
-                <img src="elasticsearch.png" alt="PowerBI">
-                <p>ElasticSearch</p>
-            </div>
-            <div class="skill-card">
-                <img src="docker.png" alt="PowerBI">
-                <p>Docker</p>
-            </div>
-            <div class="skill-card">
-                <img src="excel.png" alt="PowerBI">
-                <p>Excel</p>
-            </div>
-        </div>
+    <section class="section about" id="about">
+      <div class="section-lead"><div class="section-kicker">ABOUT</div><h2>A little<br>about <em>me.</em></h2></div>
+      <div class="about-portrait" aria-label="Rahul's profile photo"><div class="portrait-card"><img class="portrait-photo" src="rahul photo.jpg" alt="Rahul Jignesh Ganatra"></div></div>
+      <div class="about-body"><p>I'm Rahul, a Data Analyst and AI Engineer who enjoys transforming messy data into useful insights and building practical intelligent systems. My work spans analytics, data pipelines, computer vision, and full-stack applications.</p><div class="stats"><div><strong data-count="4">4</strong><b>Featured projects</b></div><div><strong data-count="3">3</strong><b>Internships</b></div><div><strong data-count="2">2</strong><b>Publications</b></div></div><div class="about-signature">Turning complexity into <em>clarity.</em><span>RG / 2026</span></div></div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h3 class="section-title">PROJECTS</h3>
-        <h2 class="recent-projects">RECENT PROJECTS</h2>
-
-
-
-        <div class="projects-grid">
-            <!-- Manually added project cards -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="navihand.png" alt="Project 1 Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Navihand</h3>
-                    <ul class="project-description">
-                        <li>Controls mouse cursor using real-time hand gestures via webcam.</li>
-                        <li>Performs actions like click, drag, and lock screen with specific gestures.</li>
-
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">MediaPipe</span>
-                        <span class="tech-tag">PyAutoGUI</span>
-                        <span class="tech-tag">NumPy</span>
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/Navihand" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="aml.png" alt="Project 2 Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">FLAG IT UP</h3>
-                    <ul class="project-description">
-                        <li>Anti-money laundering web app that detects suspicious financial transactions.</li>
-                        <li>Uses machine learning and real-time monitoring with comprehensive admin controls.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">javascript</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Numpy</span>
-                        <span class="tech-tag">Scikit-Learn</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Random Forest</span>
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/Flagitup" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://drive.google.com/file/d/10yp9KTibAYi6qXjQlupyb9qL1lWsQg8v/view?usp=drive_link"
-                        target="_blank" class="view-live">
-                        View Video <i class="fas fa-video"></i>
-                    </a>
-
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="ola.png" alt="Project 3 Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">OLA CABS DASHBOARD</h3>
-                    <ul class="project-description">
-                        <li>Interactive Power BI dashboard to analyze OLA Cab bookings, revenue, cancellations, and
-                            vehicle performance.</li>
-                        <li>Delivers actionable insights into booking trends, driver/customer behavior, payment methods,
-                            and ride metrics.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">CSV</span>
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/OLA_DASHBOARD-DATA-ANALYSIS" target="_blank"
-                        class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="vidai.png" alt="Project 4 Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">VID-AI:</h3>
-                    <ul class="project-description">
-                        <li>Developed an AI-driven platform for real-time video editing and automation.</li>
-                        <li>Features include emotion detection, scene analysis, and automated subtitle generation tools.
-                        </li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">FFMPEG</span>
-                        <span class="tech-tag">Whisper</span>
-                        <span class="tech-tag">OpenCV</span>
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/VidAI" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="dataquery.webp" alt="New Project Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">DataQuery AI</h3>
-                    <ul class="project-description">
-                        <li>DataQuery AI processes diverse data formats using advanced AI models.</li>
-                        <li>It provides insights through a user-friendly, multilingual web interface.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">OpenAI</span>
-                        <span class="tech-tag">Langchain</span>
-                        <span class="tech-tag">PyPDF2</span>
-                        <!-- Add more tech tags as needed -->
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/DataQueryAI" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="kavach.webp" alt="New Project Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">KAVACH</h3>
-                    <ul class="project-description">
-                        <li>Modernizes law enforcement with real-time communication and AI analysis.</li>
-                        <li>Enhances public safety through efficient case management and reporting.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Groq</span>
-
-                        <!-- Add more tech tags as needed -->
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/Kavach" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1tjQ6l__GP-AfHcS0_Gh57_KlZJ38Eamk/view?usp=drive_link"
-                        target="_blank" class="view-live">
-                        View Video <i class="fas fa-video"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="safeshe.png" alt="New Project Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">SAFESHE</h3>
-                    <ul class="project-description">
-                        <li>SheSafe empowers women with real-time safety navigation and emergency assistance.</li>
-                        <li>Community-driven platform connecting women through safety alerts and legal support.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Real-Time database</span>
-                        <span class="tech-tag">Google Maps API</span>
-                        <span class="tech-tag">OpenStreetMap API</span>
-                        <span class="tech-tag">Cloud Firestore</span>
-
-                        <!-- Add more tech tags as needed -->
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/SafeShe" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://drive.google.com/file/d/13NDhT98EX-Vq9_rVfV0Ityv0V2cCd1Nx/view?usp=drive_link"
-                        target="_blank" class="view-live">
-                        View Video <i class="fas fa-video"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="intellex.png" alt="New Project Preview">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">INTELLEX</h3>
-                    <ul class="project-description">
-                        <li>Intellex is an AI document assistant for interns and IT professionals.</li>
-                        <li>It supports multiple formats and interactive Q&A for security.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Langchain</span>
-                        <span class="tech-tag">LLama</span>
-                        <span class="tech-tag">PyMuPDF</span>
-                        <span class="tech-tag">FAISS</span>
-                        <span class="tech-tag">gTTS</span>
-                    </div>
-                    <a href="https://github.com/Rahul-Ganatra/Intellex" target="_blank" class="view-live">
-                        View Live <i class="fab fa-github"></i>
-                    </a>
-                    <!-- New View Video Button -->
-                    <a href="https://drive.google.com/file/d/1lft0wShEofg6RW0PBwG-JBa8UYbJa-V8/view?usp=drive_link"
-                        target="_blank" class="view-live">
-                        View Video <i class="fas fa-video"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Add more project cards as needed -->
-        </div>
-        <!-- .scroll-dots will be generated by JavaScript for mobile only -->
-
-        <!-- Add this after the projects-grid div in the projects section -->
-        <div class="show-more-container">
-            <a href="https://github.com/Rahul-Ganatra" target="_blank" class="show-more-btn">
-                Show More <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+    <section class="section journey" id="journey">
+      <div class="section-lead"><div class="section-kicker">MY JOURNEY</div><h2>A timeline of<br>my key <em>experiences.</em></h2><p>The projects, roles and milestones that shaped my journey so far.</p></div>
+      <div class="journey-main"><div class="journey-cards" id="journeyCards" role="tablist" aria-label="Career milestones">
+        <button class="journey-card active" data-journey="0" role="tab" aria-selected="true"><span class="journey-icon">▣</span><span class="date-pill">Feb – Aug 2026</span><strong>Data Analyst Intern</strong><small>Continuum Media LLC</small><span class="card-arrow">↗</span></button>
+        <button class="journey-card" data-journey="1" role="tab" aria-selected="false"><span class="journey-icon">▤</span><span class="date-pill">Aug – Oct 2025</span><strong>Full Stack Developer</strong><small>WhizMedia</small><span class="card-arrow">↗</span></button>
+        <button class="journey-card" data-journey="2" role="tab" aria-selected="false"><span class="journey-icon">▱</span><span class="date-pill">Jul – Aug 2025</span><strong>Software Engineer Associate</strong><small>BlackCoffer</small><span class="card-arrow">↗</span></button>
+      </div><div class="journey-track"><span id="journeyLine"></span><i class="selected"></i><i></i><i></i></div><div class="journey-detail" id="journeyDetail" aria-live="polite">Cleaned and structured high-volume Excel and PDF datasets, improved reporting accuracy, and prepared investor-ready reports.</div></div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience fade-in">
-        <h3 class="section-title">EXPERIENCE</h3>
-        <h2 class="recent-experience">WORK EXPERIENCE</h2>
-
-        <div class="experience-grid">
-            <!-- Latest Experience Card First -->
-            <div class="experience-card">
-                <div class="experience-image">
-                    <img src="blackcoffer1.png" alt="Company Logo"
-                        onerror="this.src='https://via.placeholder.com/350x200?text=Company+Logo'">
-                </div>
-                <div class="experience-content">
-                    <h3 class="experience-title">Software Engineer Associate</h3>
-                    <h4 class="company-name">BlackCoffer</h4>
-                    <p class="experience-duration">July 2025 - July 2025</p>
-                    <ul class="experience-description">
-                        <li>Executed large-scale web scraping for a client, acquiring over 1.4 million data rows.</li>
-                        <li>Engineered an automation script to seamlessly ingest scraped data into a PostgreSQL
-                            database, eliminating manual entry.</li>
-                        <li>Leveraged Apache AGE Viewer to visualize and analyze complex datasets for actionable
-                            insights.</li>
-                        <li>Streamlined and automated the entire data pipeline, transforming a manual process into an
-                            efficient workflow.</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Apache AGE Viewer</span>
-                        <span class="tech-tag">Web Scraping</span>
-                        <span class="tech-tag">Automation</span>
-                        <span class="tech-tag">APIs</span>
-                        <span class="tech-tag">Cloud</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Previous Experience Card -->
-            <div class="experience-card">
-                <div class="experience-image">
-                    <img src="s4ds black.jpg" alt="Company Logo"
-                        onerror="this.src='https://via.placeholder.com/350x200?text=Company+Logo'">
-                </div>
-                <div class="experience-content">
-                    <h3 class="experience-title">App Development Intern</h3>
-                    <h4 class="company-name">S4DS,KJSIT Chapter </h4>
-                    <p class="experience-duration">September 2023 - November 2023 </p>
-                    <ul class="experience-description">
-                        <li>Developed and maintained multiple Flutter applications, including Android apps, implementing
-                            complex UI designs and animations.</li>
-                        <li>Integrated REST APIs, managed state using Provider, and worked with Firebase for backend
-                            functionality in Flutter apps.</li>
-                        <li>Collaborated with cross-functional teams on various in-house projects to ensure smooth
-                            integration and project completion.</li>
-                        <li>Contributed to full-stack development by working on both frontend and backend aspects of
-                            applications.</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">REST API</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- .scroll-dots will be generated by JavaScript for mobile only -->
-
+    <section class="section projects-section" id="projects">
+      <div class="section-lead"><div class="section-kicker">PROJECTS</div><h2>Things<br>I've <em>built.</em></h2><p>Selected work across data analytics, AI, research and software engineering.</p><a class="outline-pill" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer">View All Projects <span>↗</span></a></div>
+      <div class="project-area"><div class="carousel" id="carousel" aria-label="Featured projects">
+        <button class="carousel-arrow prev" id="projectPrev" aria-label="Previous project">←</button><div class="carousel-stage" id="carouselStage"></div><button class="carousel-arrow next" id="projectNext" aria-label="Next project">→</button>
+      </div><div class="carousel-dots" id="carouselDots" role="group" aria-label="Choose featured project"></div></div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section fade-in" aria-labelledby="services-heading">
-        <h3 class="section-title">SERVICES</h3>
-        <h2 class="opportunities-heading" id="services-heading">What I Offer</h2>
-        <div class="service-single-card">
-            <h3 class="service-main-title">Looking for New Challenges</h3>
-            <p class="service-main-desc">
-                I offer professional services in <b>Flutter App Development</b>, <b>Data Science</b>, and <b>Data
-                    Analysis</b>.<br>
-                I'm always eager to participate in hackathons, competitions, and collaborative projects that push the
-                boundaries of technology and innovation.<br>
-                If you're looking for a developer, data scientist, or analyst for your next project or event, feel free
-                to reach out!
-            </p>
-            <a href="mailto:rahuljganatra07@gmail.com" class="service-contact-btn">Contact Me</a>
-        </div>
+    <section class="section skills" id="skills">
+      <div class="section-lead"><div class="section-kicker">SKILLS</div><h2>Tools &amp;<br><em>Technologies.</em></h2><p>The stack I use to analyze data, engineer solutions and ship working applications.</p></div>
+      <div class="orbit-wrap" id="orbitWrap" aria-label="Skills orbit. Select a category on the right to filter tools."><div class="orbit-ring"><span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span></div><div id="orbitTags" class="orbit-tags"></div></div>
+      <div class="skill-categories" id="skillCategories"><button class="skill-category active" data-skill="development"><span class="category-icon">&lt;/&gt;</span><strong>Development</strong><small>React · Flask · FastAPI · Flutter</small></button><button class="skill-category" data-skill="analytics"><span class="category-icon">▥</span><strong>Data &amp; Analytics</strong><small>SQL · Pandas · Power BI · Excel</small></button><button class="skill-category" data-skill="ai"><span class="category-icon">◇</span><strong>AI &amp; Computer Vision</strong><small>OpenCV · SHAP · RAG · NLP</small></button><button class="skill-category" data-skill="databases"><span class="category-icon">⬡</span><strong>Databases &amp; Cloud</strong><small>PostgreSQL · MySQL · Firebase</small></button><button class="skill-category" data-skill="tools"><span class="category-icon">⚙</span><strong>Tools &amp; Platforms</strong><small>Git · Docker · VS Code</small></button></div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications fade-in">
-        <h3 class="section-title">CERTIFICATIONS</h3>
-        <h2 class="certifications-heading">CERTIFICATIONS</h2>
-
-        <div class="certifications-grid">
-            <div class="certification-card">
-                <div class="certification-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="certification-content">
-                    <h3>Data Analysis with Python</h3>
-                    <p>IBM</p>
-                    <span class="certification-date">2025</span>
-                    <a href="https://drive.google.com/file/d/1PZlSTHG0MxKnv5vo-26K8UM6gsTZwe9T/view?usp=drive_link"
-                        class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="certification-card">
-                <div class="certification-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="certification-content">
-                    <h3>Python for Data Science</h3>
-                    <p>IBM</p>
-                    <span class="certification-date">2025</span>
-                    <a href="https://drive.google.com/file/d/1pWtwOQxAT3tYsRrTMMMlCaAs2eFDgb1N/view?usp=drive_link"
-                        class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="certification-card">
-                <div class="certification-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="certification-content">
-                    <h3>Databases for Developers:Foundation</h3>
-                    <p>Oracle</p>
-                    <span class="certification-date">2025</span>
-                    <a href="https://drive.google.com/file/d/1QCtSh5cZqZjHVDP976FGETNlL_PF9Bm2/view?usp=drive_link"
-                        class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="certification-card">
-                <div class="certification-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="certification-content">
-                    <h3>Data Analytics and Visualization Job Simulation</h3>
-                    <p>Accenture</p>
-                    <span class="certification-date">2024</span>
-                    <a href="https://drive.google.com/file/d/1_F9_mG1WX5MeLMaeZl4ssDAkZ-Mn3S5L/view?usp=drive_link"
-                        class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="certification-card">
-                <div class="certification-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="certification-content">
-                    <h3>Supervised Machine Learning: Regression and Classification</h3>
-                    <p>Coursera</p>
-                    <span class="certification-date">2024</span>
-                    <a href="https://drive.google.com/file/d/1Ypyq5LRHywBJivouHqnin793r4HCQrHq/view?usp=drive_link"
-                        class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
+    <section class="section credentials" id="credentials">
+      <div class="section-lead"><div class="section-kicker">CREDENTIALS</div><h2>Publications &amp;<br><em>Research.</em></h2><p>Research contributions in computer vision, safety, and low-resource NLP.</p></div>
+      <div class="credential-column"><div class="credential-head"><span class="line-icon">▤</span><h3>Publications</h3></div><a class="credential-row" href="https://scholar.google.com/scholar?q=An+AI-Powered+Situational+Awareness+Platform+for+Proactive+Crowd+Safety+at+Mass+Events" target="_blank" rel="noopener noreferrer"><strong>An AI-Powered Situational Awareness Platform for Proactive Crowd Safety at Mass Events</strong><span>Springer Nature · ICDMAI 2026</span><b>↗</b></a><a class="credential-row" href="https://scholar.google.com/scholar?q=Comparative+Analysis+of+Human+Annotation+and+LLM-Based+Classification+for+Gujarati+News+Articles" target="_blank" rel="noopener noreferrer"><strong>Comparative Analysis of Human Annotation and LLM-Based Classification for Gujarati News Articles</strong><span>Springer Nature · ICDMAI 2026</span><b>↗</b></a></div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements fade-in">
-        <h3 class="section-title">ACHIEVEMENTS & ROLES</h3>
-        <h2 class="achievements-heading">ACHIEVEMENTS & ROLES</h2>
+    <section class="section education" id="education"><div class="section-lead"><div class="section-kicker">EDUCATION</div><h2>Where I<br><em>learned.</em></h2><p>Academic foundations in artificial intelligence, data science and engineering.</p></div><div class="education-list"><div class="education-item"><span class="line-icon">◇</span><div><strong>M.Tech — Artificial Intelligence &amp; Data Science</strong><span>K J Somaiya School of Engineering · Expected 2028</span></div></div><div class="education-item"><span class="line-icon">◇</span><div><strong>B.Tech — Artificial Intelligence &amp; Data Science</strong><span>K J Somaiya Institute of Technology · 2026 · CGPA 9.01</span></div></div></div></section>
 
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <div class="achievement-content">
-                    <h3>2nd Runner Up</h3>
-                    <p>AlgoForge 2025</p>
-                    <span class="achievement-date">2025</span>
-                </div>
-            </div>
+    <section class="section extra" id="extra"><div class="section-lead"><div class="section-kicker">EXTRA CURRICULAR</div><h2>Beyond<br><em>Academics.</em></h2><p>Leadership, event organization and community-building beyond the classroom.</p></div><div class="extra-card"><div class="extra-symbol" aria-hidden="true">♧</div><div class="extra-content"><h3>Society for Data Science — KJSIT</h3><span class="extra-pill">Secretary</span><p>Organized a 36-hour offline hackathon with 200+ participants, supporting collaboration and the student data science community.</p><div class="extra-sub">Student Council — Organizing Head · Led a team of 15, helping deliver events engaging 1,000+ attendees.</div></div><svg class="extra-wave" viewBox="0 0 260 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".9"> <path d="M0 92 Q65 17 127 65 T260 20"/><path d="M0 97 Q65 22 127 70 T260 25"/><path d="M0 102 Q65 27 127 75 T260 30"/><path d="M0 107 Q65 32 127 80 T260 35"/><path d="M0 112 Q65 37 127 85 T260 40"/><path d="M0 117 Q65 42 127 90 T260 45"/><path d="M0 122 Q65 47 127 95 T260 50"/><path d="M0 127 Q65 52 127 100 T260 55"/></g></svg></div></section>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="achievement-content">
-                    <h3>Secretary</h3>
-                    <p>Society for Data Science (S4DS) - KJSIT</p>
-                    <span class="achievement-date">May 2024 - Present</span>
-                </div>
-            </div>
+    <section class="contact" id="contact"><div class="contact-heading"><span class="slash">07 / CONTACT</span><h2>Have a project<br><em>in mind?</em></h2></div><div class="contact-right"><div class="contact-eyebrow">SOCIALS</div><p>Send me an email or reach out through one of the channels below. I’ll get back to you as soon as possible.</p><p class="contact-availability">Open to meaningful work: analytics, AI, product and startup opportunities.</p><div class="contact-links"><a href="mailto:rahuljganatra07@gmail.com" class="button button-dark">rahuljganatra07@gmail.com ↗</a><a class="round-social" href="https://www.linkedin.com/in/rahul-ganatra-rg7404/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a class="round-social" href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer" aria-label="GitHub">gh</a></div></div><svg class="contact-wave left" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q80 15 130 75 T300 90" fill="none" stroke="currentColor"/></svg><svg class="contact-wave right" viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 Q130 100 190 45 T300 18" fill="none" stroke="currentColor"/></svg></section>
+  </main>
+  <footer class="footer">
+    <div class="footer-links">
+      <div><p>Navigate</p><a href="#home">Home</a><a href="#about">About</a><a href="#journey">Journey</a></div>
+      <div><p>&nbsp;</p><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Credentials</a><a href="#education">Education</a><a href="#extra">Extra</a></div>
+      <div><p>Elsewhere</p><a href="https://www.linkedin.com/in/rahul-ganatra-rg7404/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/Rahul-Ganatra" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="RAHUL JIGNESH GANATRA RESUME.pdf" download>Résumé ↗</a></div>
+      <div><p>Say hello</p><a href="mailto:rahuljganatra07@gmail.com">rahuljganatra07@gmail.com</a><span>Open to meaningful work</span><span>Mumbai · India</span></div>
+    </div>
+    <div class="footer-name" aria-label="Rahul Ganatra">G A N A T R A<span>.</span></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Rahul Ganatra</span><span>Data Analyst · AI Engineer · Mumbai</span><a href="#home">Back to top ↑</a></div>
+  </footer>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="achievement-content">
-                    <h3>Organizing Head</h3>
-                    <p>Student Council (SC) - KJSIT</p>
-                    <span class="achievement-date">January 2023 - January 2024</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social/Contact Section -->
-    <section id="contact" class="social">
-        <h3 class="section-title">SOCIAL</h3>
-        <h2 class="connect-heading">LET'S CONNECT!</h2>
-
-        <div class="social-grid">
-            <!-- Row 1 -->
-            <a href="https://github.com/Rahul-Ganatra" target="_blank" class="social-card">
-                <i class="fab fa-github"></i>
-                <span>Github</span>
-            </a>
-
-            <a href="mailto:rahuljganatra07@gmail.com" class="social-card">
-                <i class="fab fa-google"></i>
-                <span>Gmail</span>
-            </a>
-
-            <a href="https://www.instagram.com/_rahul_7404" target="_blank" class="social-card">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/rahul-ganatra-b61282295/" target="_blank" class="social-card">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-            </a>
-
-            <a href="https://wa.me/9152251477" target="_blank" class="social-card">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>RAHUL JIGNESH GANATRA</h3>
-                <p>Flutter Developer, Data Analyst, Data Scientist</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li><i class="fas fa-envelope"></i><a
-                            href="mailto:rahuljganatra07@gmail.com">rahuljganatra07@gmail.com</a>
-                    </li>
-                    <li><i class="fas fa-phone"></i><a href="tel:+919152251477">+91 9152251477</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Rahul Jignesh Ganatra. All rights reserved.</p>
-            <p>Made with ❤️ by Rahul Jignesh Ganatra</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+  <dialog id="projectDialog" class="modal"><button id="modalClose" class="modal-close" aria-label="Close project details">×</button><div id="modalBody"></div></dialog>
 </body>
-
 </html>
